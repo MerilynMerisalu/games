@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ohbmasil6mr"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_ddojs"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="2_dfko6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_boo2a"]
+font = ExtResource("2_dfko6")
+font_size = 77
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ddojs")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 329.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00:00"
+label_settings = SubResource("LabelSettings_boo2a")

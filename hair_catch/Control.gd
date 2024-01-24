@@ -1,6 +1,6 @@
 extends Control
 var time_left : int
-var total_time_minutes: int = 90; 
+var total_time_minutes: int = 130; 
 
 
 func _ready() -> void:
