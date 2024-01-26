@@ -1,13 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtknlojqi1gex"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_a1jmq"]
-[ext_resource type="PackedScene" uid="uid://c4ohbmasil6mr" path="res://UI/UI_Control/UI_Control.tscn" id="2_5465v"]
+
+[sub_resource type="GDScript" id="GDScript_5jev1"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+
+"
 
 [node name="Main" type="Node"]
 script = ExtResource("1_a1jmq")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -16,6 +29,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("2_5465v")]
+[node name="GameTimerLabel" type="Label" parent="."]
+offset_right = 1123.0
+offset_bottom = 328.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+text = "00:00"
+script = SubResource("GDScript_5jev1")
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
