@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtknlojqi1gex"]
+[gd_scene load_steps=4 format=3 uid="uid://dtknlojqi1gex"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_a1jmq"]
+[ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="2_o27xb"]
 
 [sub_resource type="GDScript" id="GDScript_5jev1"]
 script/source = "extends Label
@@ -40,4 +41,29 @@ theme_override_font_sizes/font_size = 77
 text = "00:00"
 script = SubResource("GDScript_5jev1")
 
+[node name="Ticking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o27xb")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -379.0
+offset_top = 302.0
+offset_right = -6.0
+offset_bottom = 344.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Sound from Zapsplat.com"
+underline = 1
+uri = "Zapsplat.com"
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]

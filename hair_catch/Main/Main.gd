@@ -23,7 +23,14 @@ func _on_game_timer_timeout() -> void:
 			minutes -= 1;
 			seconds = 60;
 	seconds -= 1;
+	if (minutes == 0 and (seconds <= 10)):
+		$Ticking.play();
 	if (minutes == 0 and seconds == 0 ):
 		$GameTimer.stop();
+		$Ticking.stop();
 	$GameTimerLabel.text = str(minutes) + ":" + str(seconds);
 		
+
+
+func _on_link_button_pressed() -> void:
+	OS.shell_open("https://www.zapsplat.com/")
