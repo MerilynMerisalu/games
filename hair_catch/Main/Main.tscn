@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtknlojqi1gex"]
+[gd_scene load_steps=5 format=3 uid="uid://dtknlojqi1gex"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_a1jmq"]
 [ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="2_o27xb"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="3_gutka"]
 
 [sub_resource type="GDScript" id="GDScript_5jev1"]
 script/source = "extends Label
@@ -33,29 +34,52 @@ grow_vertical = 2
 [node name="GameTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="GameTimerLabel" type="Label" parent="."]
-offset_right = 1123.0
-offset_bottom = 328.0
+[node name="Ticking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o27xb")
+
+[node name="TimerContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameTimerLabel" type="Label" parent="TimerContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 77
 text = "00:00"
 script = SubResource("GDScript_5jev1")
 
-[node name="Ticking" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_o27xb")
+[node name="ScoreContainer" type="BoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = -10.0
+offset_right = -20.0
+offset_bottom = 96.0
+grow_horizontal = 2
+alignment = 1
 
-[node name="LinkButton" type="LinkButton" parent="."]
-anchors_preset = 6
+[node name="Score" type="Label" parent="ScoreContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+text = "0"
+
+[node name="LinkContainer" type="BoxContainer" parent="."]
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -379.0
-offset_top = 302.0
-offset_right = -6.0
-offset_bottom = 344.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
+
+[node name="LinkButton" type="LinkButton" parent="LinkContainer"]
+layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -65,5 +89,23 @@ text = "Sound from Zapsplat.com"
 underline = 1
 uri = "Zapsplat.com"
 
+[node name="HairContainer" type="BoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -466.0
+offset_top = 14.0
+offset_right = -48.0
+offset_bottom = 80.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="HairLeftLabel" type="Label" parent="HairContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gutka")
+theme_override_font_sizes/font_size = 77
+text = "Hair left : 0"
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
-[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
+[connection signal="pressed" from="LinkContainer/LinkButton" to="." method="_on_link_button_pressed"]
