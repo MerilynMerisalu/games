@@ -35,6 +35,8 @@ func _on_game_timer_timeout() -> void:
 
 func _on_link_button_pressed() -> void:
 	OS.shell_open("https://www.zapsplat.com/");
+	
+	
 func _change_window_mode() -> void:
 	if Input.is_action_pressed("ui_cancel"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED);

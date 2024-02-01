@@ -13,7 +13,10 @@ config_version=5
 config/name="Hair Catch"
 run/main_scene="res://Main/Main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://png/logo-white.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [display]
 
