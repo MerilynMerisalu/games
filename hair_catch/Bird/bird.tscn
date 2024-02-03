@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq16helqlma2s"]
+
+[ext_resource type="Texture2D" uid="uid://cv28ew5eycwuy" path="res://assets/characters/bird/wing down.png" id="1_nwn82"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nbrgn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nwn82")
+}],
+"loop": true,
+"name": &"still",
+"speed": 8.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(355, -61)
+rotation = 0.0377486
+scale = Vector2(0.6, 0.6)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nbrgn")
+animation = &"still"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-527.473, 430.213, -504.911, 409.347, -546.015, 380.878, -583.033, 372.269, -609.177, 386.599, -600.628, 436.312)

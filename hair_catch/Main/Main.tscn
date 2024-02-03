@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtknlojqi1gex"]
+[gd_scene load_steps=6 format=3 uid="uid://dtknlojqi1gex"]
 
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_a1jmq"]
 [ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="2_o27xb"]
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="3_gutka"]
+[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Bird/bird.tscn" id="4_r7061"]
 
 [sub_resource type="GDScript" id="GDScript_5jev1"]
 script/source = "extends Label
@@ -106,6 +107,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_gutka")
 theme_override_font_sizes/font_size = 77
 text = "Hair left : 0"
+
+[node name="Bird" parent="." instance=ExtResource("4_r7061")]
+position = Vector2(553, 62)
+scale = Vector2(0.4, 0.4)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="pressed" from="LinkContainer/LinkButton" to="." method="_on_link_button_pressed"]

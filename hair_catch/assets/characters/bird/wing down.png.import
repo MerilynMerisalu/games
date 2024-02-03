@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daocp3wscq1sm"
-path="res://.godot/imported/logo-black.png-9798ef9cc51e88a04ce419bf0b716964.ctex"
+uid="uid://cv28ew5eycwuy"
+path="res://.godot/imported/wing down.png-e8e2e5344e022f880ee9a86eb070861f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://png/logo-black.png"
-dest_files=["res://.godot/imported/logo-black.png-9798ef9cc51e88a04ce419bf0b716964.ctex"]
+source_file="res://assets/characters/bird/wing down.png"
+dest_files=["res://.godot/imported/wing down.png-e8e2e5344e022f880ee9a86eb070861f.ctex"]
 
 [params]
 
