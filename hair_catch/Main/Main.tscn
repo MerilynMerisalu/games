@@ -31,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="GameTimer" type="Timer" parent="."]
 autostart = true
@@ -109,8 +110,7 @@ theme_override_font_sizes/font_size = 77
 text = "Hair left : 0"
 
 [node name="Bird" parent="." instance=ExtResource("4_r7061")]
-position = Vector2(553, 62)
-scale = Vector2(0.4, 0.4)
+position = Vector2(137, 429)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="pressed" from="LinkContainer/LinkButton" to="." method="_on_link_button_pressed"]
