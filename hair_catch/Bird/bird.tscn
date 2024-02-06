@@ -8,14 +8,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vgmi8")
+"texture": ExtResource("2_8ktb5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_8ktb5")
+"texture": ExtResource("2_vgmi8")
 }],
 "loop": false,
 "name": &"fly",
-"speed": 2.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,

@@ -6,8 +6,9 @@ var seconds = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
 	_reset_timer();
-	$TimerContainer/GameTimerLabel.modulate = Color.BLACK
+	$TimerContainer/GameTimerLabel.modulate = Color.BLACK;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 		_change_window_mode();	
