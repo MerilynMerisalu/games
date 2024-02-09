@@ -1,27 +1,27 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq16helqlma2s"]
 
 [ext_resource type="Script" path="res://Bird/bird.gd" id="1_neeh5"]
-[ext_resource type="Texture2D" uid="uid://cv28ew5eycwuy" path="res://assets/characters/bird/wing down.png" id="2_8ktb5"]
-[ext_resource type="Texture2D" uid="uid://c5flly6fgbfgp" path="res://assets/characters/bird/bird wing up.png" id="2_vgmi8"]
+[ext_resource type="Texture2D" uid="uid://c5flly6fgbfgp" path="res://assets/characters/bird/bird wing up.png" id="2_1dqtc"]
+[ext_resource type="Texture2D" uid="uid://cv28ew5eycwuy" path="res://assets/characters/bird/wing down.png" id="2_d532g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vs0u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8ktb5")
+"texture": ExtResource("2_1dqtc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_vgmi8")
+"texture": ExtResource("2_d532g")
 }],
-"loop": false,
+"loop": true,
 "name": &"fly",
 "speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8ktb5")
+"texture": ExtResource("2_d532g")
 }],
-"loop": true,
+"loop": false,
 "name": &"still",
 "speed": 5.0
 }]
