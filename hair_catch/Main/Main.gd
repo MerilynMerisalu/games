@@ -8,7 +8,7 @@ var seconds = 0;
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
 	_reset_timer();
-	$TimerContainer/GameTimerLabel.modulate = Color.BLACK;
+	$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.BLACK;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 		Screen.change_window_mode();
@@ -26,11 +26,11 @@ func _on_game_timer_timeout() -> void:
 	seconds -= 1;
 	if minutes == 0 and seconds <= 10:
 		$Ticking.play();
-		$TimerContainer/GameTimerLabel.modulate = Color.RED;
+		$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.RED;
 	if (minutes == 0 and seconds == 0 ):
 		$GameTimer.stop();
 		$Ticking.stop();
-	$TimerContainer/GameTimerLabel.text = str(minutes) + ":" + str(seconds);
+	$ColorRect/UI/TimerContainer/GameTimerLabel.text = str(minutes) + ":" + str(seconds);
 		
 
 
