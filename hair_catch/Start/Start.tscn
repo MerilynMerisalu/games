@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://327n83nb2ifi"]
+[gd_scene load_steps=5 format=3 uid="uid://327n83nb2ifi"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_1mb5u"]
 [ext_resource type="Script" path="res://Start/Start.gd" id="2_cu8w0"]
 [ext_resource type="Script" path="res://Start/Credits.gd" id="3_7ywea"]
+[ext_resource type="AudioStream" uid="uid://7r78hagnlwts" path="res://assets/audio/credits.mp3" id="4_ttp01"]
 
 [node name="Start" type="Node"]
 
@@ -80,6 +81,10 @@ theme_override_font_sizes/font_size = 77
 text = "CREDITS"
 flat = true
 script = ExtResource("3_7ywea")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ttp01")
+autoplay = true
 
 [connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
 [connection signal="pressed" from="Credits" to="Start" method="_on_credits_pressed"]
