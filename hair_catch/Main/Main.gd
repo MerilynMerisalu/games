@@ -7,7 +7,8 @@ var seconds = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
-	_reset_timer();
+	await get_tree().create_timer(.8).timeout
+	_reset_timer()
 	$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.BLACK;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -38,3 +39,7 @@ func _on_link_button_pressed() -> void:
 	OS.shell_open("https://www.zapsplat.com/");
 	
 
+
+func _on_start_timer_timeout() -> void:
+	$StartTimerContainer/StartLabel.hide();
+	
