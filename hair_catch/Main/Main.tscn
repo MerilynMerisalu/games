@@ -23,6 +23,7 @@ mouse_filter = 2
 layout_mode = 1
 
 [node name="GameTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Ticking" type="AudioStreamPlayer" parent="."]
