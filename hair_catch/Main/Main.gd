@@ -6,8 +6,9 @@ var seconds = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$StartTimerContainer/StartLabel.visible = false;
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
-	await get_tree().create_timer(.8).timeout
+	#await get_tree().create_timer(.8).timeout
 	_reset_timer()
 	$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.BLACK;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,5 +42,10 @@ func _on_link_button_pressed() -> void:
 
 
 func _on_start_timer_timeout() -> void:
-	$StartTimerContainer/StartLabel.hide();
-	
+	$StartTimerContainer/StartLabel.visible = false;
+
+func _on_level_timer_timeout() -> void:
+	$LevelContainer/Level.visible = false;
+	$StartTimerContainer/StartLabel.visible = true;
+	$StartTimer.start();
+	$Counting.play();
