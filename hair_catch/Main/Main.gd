@@ -7,7 +7,7 @@ var seconds = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$StartTimerContainer/StartLabel.visible = false;
+	$LevelContainer/StartTimerContainer/StartLabel.visible = false;
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
 	
 	_reset_timer()
@@ -42,11 +42,11 @@ func _on_link_button_pressed() -> void:
 	
 
 
-func _on_start_timer_timeout() -> void:
-	$StartTimerContainer/StartLabel.visible = false;
+#func _on_start_timer_timeout() -> void:
+#	$StartTimerContainer/StartLabel.visible = false;
 
-func _on_level_timer_timeout() -> void:
-	$LevelContainer/Level.visible = false;
-	$StartTimerContainer/StartLabel.visible = true;
-	$StartTimer.start();
-	$Counting.play();
+#func _on_level_timer_timeout() -> void:
+	#$LevelContainer/Level.visible = false;
+	#$StartTimerContainer/StartLabel.visible = true;
+	#$StartTimer.start();
+	#$Counting.play();
