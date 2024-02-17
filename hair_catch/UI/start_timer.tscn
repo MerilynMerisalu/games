@@ -3,7 +3,7 @@
 [sub_resource type="GDScript" id="GDScript_lefg7"]
 script/source = "extends BoxContainer
 
-
+signal is_ended;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_start_timer_timeout() -> void:
 	$StartLabel.visible = false;
+	is_ended.emit()
 "
 
 [node name="StartTimerContainer" type="BoxContainer"]

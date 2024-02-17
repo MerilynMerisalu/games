@@ -16,3 +16,5 @@ func _on_level_timer_timeout() -> void:
 	$StartTimerContainer/StartLabel.visible = true;
 	$StartTimerContainer/StartTimer.start();
 	$Counting.play();
+
+

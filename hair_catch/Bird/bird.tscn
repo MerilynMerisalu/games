@@ -39,3 +39,10 @@ animation = &"fly"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-527.473, 430.213, -504.911, 409.347, -546.015, 380.878, -583.033, 372.269, -609.177, 386.599, -600.628, 436.312)
+
+[node name="MovingTimer" type="Timer" parent="."]
+wait_time = 2.2
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="MovingTimer" to="." method="_on_moving_timer_timeout"]
