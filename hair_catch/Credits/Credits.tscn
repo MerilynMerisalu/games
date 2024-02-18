@@ -1,39 +1,66 @@
-[gd_scene load_steps=3 format=3 uid="uid://cigbt8a6wtmwm"]
+[gd_scene load_steps=2 format=3 uid="uid://cigbt8a6wtmwm"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_1pfef"]
-[ext_resource type="AudioStream" uid="uid://7r78hagnlwts" path="res://assets/audio/credits.mp3" id="2_lchtw"]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="Control" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsTitle" type="BoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -8.0
-offset_top = 56.0
-offset_right = -8.0
-offset_bottom = 122.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -795.0
+offset_right = 778.0
+offset_bottom = 180.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="CreditsTitle"]
+[node name="TitleLabel" type="Label" parent="TitleContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_1pfef")
 theme_override_font_sizes/font_size = 77
-text = "Credits"
+text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="CreditsMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_lchtw")
-autoplay = true
+[node name="AuthorContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 146.0
+offset_right = 71.0
+offset_bottom = 212.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="AuthorLabel" type="Label" parent="AuthorContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "author of the game idea: Merilyn Merisalu"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
