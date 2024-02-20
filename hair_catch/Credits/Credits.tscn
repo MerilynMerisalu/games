@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cigbt8a6wtmwm"]
+[gd_scene load_steps=3 format=3 uid="uid://cigbt8a6wtmwm"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_1pfef"]
+[ext_resource type="AudioStream" uid="uid://7r78hagnlwts" path="res://assets/audio/credits.mp3" id="2_4yqw7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -64,3 +65,26 @@ text = "author of the game idea: Merilyn Merisalu"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="HelpWithGraphicsBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -798.0
+offset_top = 212.0
+offset_right = 1106.0
+offset_bottom = 278.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="HelpWithGraphicsLabel" type="Label" parent="HelpWithGraphicsBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "help with graphics: Arturo Perales JR, Marian mõisa"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4yqw7")
+autoplay = true
