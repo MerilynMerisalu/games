@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cigbt8a6wtmwm"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_1pfef"]
-[ext_resource type="AudioStream" uid="uid://7r78hagnlwts" path="res://assets/audio/credits.mp3" id="2_4yqw7"]
+[ext_resource type="Script" path="res://Credits/Credits.gd" id="1_gkqhm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gkqhm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -46,10 +47,10 @@ uppercase = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 12.0
-offset_top = 146.0
-offset_right = 71.0
-offset_bottom = 212.0
+offset_left = -18.0
+offset_top = 160.0
+offset_right = 41.0
+offset_bottom = 226.0
 grow_horizontal = 2
 alignment = 1
 
@@ -85,6 +86,113 @@ theme_override_fonts/font = ExtResource("1_1pfef")
 theme_override_font_sizes/font_size = 77
 text = "help with graphics: Arturo Perales JR, Marian mõisa"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_4yqw7")
-autoplay = true
+[node name="MusicAndSoundsContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 283.0
+offset_right = 235.0
+offset_bottom = 362.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Music" type="Label" parent="MusicAndSoundsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Music and sounds:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartAndCreditsMusic" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -601.0
+offset_top = 379.0
+offset_right = 602.0
+offset_bottom = 445.0
+grow_horizontal = 2
+alignment = 2
+
+[node name="StartAndCreditsMusicLabel" type="Label" parent="StartAndCreditsMusic"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Start and credits scenes music: "
+
+[node name="SoundTrackTitleContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1160.0
+offset_top = 458.0
+offset_right = 1161.0
+offset_bottom = 524.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="SoundtrackTitleLabel" type="Label" parent="SoundTrackTitleContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Shadow Tag – sneaky cartoon music with bursts of liveliness"
+
+[node name="SoundtrackAuthorBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -594.0
+offset_top = 532.0
+offset_right = 595.0
+offset_bottom = 598.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="SoundTrackAuthorLabel" type="Label" parent="SoundtrackAuthorBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Author of the music: Audio hero"
+
+[node name="SoundtrackObtainedFromBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -705.0
+offset_top = 604.0
+offset_right = 706.0
+offset_bottom = 670.0
+grow_horizontal = 2
+
+[node name="SoundTrackObtainedFromLabel" type="Label" parent="SoundtrackObtainedFromBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Soundtrack Music from: "
+
+[node name="SoundtrackLink" type="LinkButton" parent="SoundtrackObtainedFromBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Zapsplat.com"
+uri = "Zapsplat.com"
+
+[connection signal="pressed" from="SoundtrackObtainedFromBoxContainer/SoundtrackLink" to="." method="_on_soundtrack_link_pressed"]
