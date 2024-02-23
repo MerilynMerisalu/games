@@ -8,6 +8,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gkqhm")
@@ -38,7 +40,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_1pfef")
 theme_override_font_sizes/font_size = 77
-text = "CREDITS"
+text = "CREDITS:"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -195,4 +197,110 @@ theme_override_font_sizes/font_size = 77
 text = "Zapsplat.com"
 uri = "Zapsplat.com"
 
+[node name="LevelSoundEffectTitleBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 700.0
+offset_right = 67.0
+offset_bottom = 740.0
+alignment = 1
+
+[node name="LevelSoundEffectTitleLabel" type="Label" parent="LevelSoundEffectTitleBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Title of Level Sound Effect: Cartoon walk, descend and level out at end"
+
+[node name="LevelSoundEffectAuthorBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+offset_left = 510.0
+offset_top = 811.0
+offset_right = 2156.0
+offset_bottom = 877.0
+alignment = 1
+
+[node name="LevelSoundEffectAuthorLabel" type="Label" parent="LevelSoundEffectAuthorBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Level Sound Effect: ZapSplat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSoundEffectObtainedFrom" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 904.0
+offset_right = 2010.0
+offset_bottom = 970.0
+
+[node name="LevelSoundEffectObtainedFromLabel" type="Label" parent="LevelSoundEffectObtainedFrom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Level Sound Effect from: "
+
+[node name="LevelSoundEffectObtainedFrom" type="LinkButton" parent="LevelSoundEffectObtainedFrom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "zapsplat.com"
+uri = "https://www.zapsplat.com/"
+
+[node name="StartCounterSoundEffectBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 993.0
+offset_right = 2868.0
+offset_bottom = 1059.0
+
+[node name="StartCounterSoundEffectTitle" type="Label" parent="StartCounterSoundEffectBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Title of the Start Counter Sound Effect: Cartoon Character Counting To Three Fast"
+
+[node name="StartCounterSoundEffectAuthorBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 1096.0
+offset_right = 75.0
+offset_bottom = 1136.0
+
+[node name="StartCounterSoundEffectAuthorLabel" type="Label" parent="StartCounterSoundEffectAuthorBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Start Counter Sound Effect: applehillstudios"
+
+[node name="StartCounterSoundEffectObtainedFromBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1222.0
+offset_right = 40.0
+offset_bottom = 1262.0
+
+[node name="StartCounterSoundEffectObtainedFromLabel" type="Label" parent="StartCounterSoundEffectObtainedFromBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "start counter sound Effect from: "
+
+[node name="StartCounterSoundEffectObtainedFromLinkButton" type="LinkButton" parent="StartCounterSoundEffectObtainedFromBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "elements.envato.com/cartoon-character-counting-to-three-fast-2LM2SGJ"
+uri = "https://elements.envato.com/"
+
 [connection signal="pressed" from="SoundtrackObtainedFromBoxContainer/SoundtrackLink" to="." method="_on_soundtrack_link_pressed"]
+[connection signal="pressed" from="LevelSoundEffectObtainedFrom/LevelSoundEffectObtainedFrom" to="." method="_on_level_sound_effect_obtained_from_pressed"]
+[connection signal="pressed" from="StartCounterSoundEffectObtainedFromBoxContainer/StartCounterSoundEffectObtainedFromLinkButton" to="." method="_on_start_counter_sound_effect_obtained_from_link_button_pressed"]

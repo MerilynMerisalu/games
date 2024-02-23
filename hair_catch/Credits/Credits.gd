@@ -7,9 +7,18 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_soundtrack_link_pressed() -> void:
 	OS.shell_open("https://www.zapsplat.com/");
+
+
+func _on_level_sound_effect_obtained_from_pressed() -> void:
+	OS.shell_open("https://www.zapsplat.com/");
+	
+
+
+func _on_start_counter_sound_effect_obtained_from_link_button_pressed() -> void:
+	OS.shell_open("https://elements.envato.com/cartoon-character-counting-to-three-fast-2LM2SGJ")
