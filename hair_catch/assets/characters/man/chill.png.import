@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8cgmdt4p1ck2"
-path="res://.godot/imported/404995805_1814734488946999_7203722487829466774_n.png-cc2c4de70a99ab07581fb404b1ee027c.ctex"
+uid="uid://7y1kflud7h7q"
+path="res://.godot/imported/chill.png-713899476004e3e1ea28fbaff3238405.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/404995805_1814734488946999_7203722487829466774_n.png"
-dest_files=["res://.godot/imported/404995805_1814734488946999_7203722487829466774_n.png-cc2c4de70a99ab07581fb404b1ee027c.ctex"]
+source_file="res://assets/characters/man/chill.png"
+dest_files=["res://.godot/imported/chill.png-713899476004e3e1ea28fbaff3238405.ctex"]
 
 [params]
 

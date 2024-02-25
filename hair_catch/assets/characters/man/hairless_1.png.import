@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cteudjdx0usr6"
-path="res://.godot/imported/404963530_1090730372276115_8930916353855095358_n.png-dbce12f3f3af9b08a3b6021a2b686765.ctex"
+uid="uid://5rru8y4witqj"
+path="res://.godot/imported/hairless_1.png-2117d585a5efbe51103470675894b5b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/404963530_1090730372276115_8930916353855095358_n.png"
-dest_files=["res://.godot/imported/404963530_1090730372276115_8930916353855095358_n.png-dbce12f3f3af9b08a3b6021a2b686765.ctex"]
+source_file="res://assets/characters/man/hairless_1.png"
+dest_files=["res://.godot/imported/hairless_1.png-2117d585a5efbe51103470675894b5b0.ctex"]
 
 [params]
 

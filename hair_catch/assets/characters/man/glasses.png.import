@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chkx04c16ari5"
-path="res://.godot/imported/405014705_1471469033783426_3784732852047909514_n.png-0806e7d10cf6eaec208675348bfd5aa1.ctex"
+uid="uid://0faj2s8pacxt"
+path="res://.godot/imported/glasses.png-c7bd4b9852d2f8e7d4cd9e444d57cc00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/405014705_1471469033783426_3784732852047909514_n.png"
-dest_files=["res://.godot/imported/405014705_1471469033783426_3784732852047909514_n.png-0806e7d10cf6eaec208675348bfd5aa1.ctex"]
+source_file="res://assets/characters/man/glasses.png"
+dest_files=["res://.godot/imported/glasses.png-c7bd4b9852d2f8e7d4cd9e444d57cc00.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://don4sgo15i7ob"
-path="res://.godot/imported/404977724_2052498788482436_1192134415751682544_n.png-3d62c6b4eb64d00f46261994408ca54b.ctex"
+uid="uid://1iwx05gfq0lj"
+path="res://.godot/imported/calm.png-70a726e765502195ed87d01c8a5176a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/404977724_2052498788482436_1192134415751682544_n.png"
-dest_files=["res://.godot/imported/404977724_2052498788482436_1192134415751682544_n.png-3d62c6b4eb64d00f46261994408ca54b.ctex"]
+source_file="res://assets/characters/man/calm.png"
+dest_files=["res://.godot/imported/calm.png-70a726e765502195ed87d01c8a5176a3.ctex"]
 
 [params]
 

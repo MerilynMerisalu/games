@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doovoud1ln2cn"
-path="res://.godot/imported/404924075_1383253958986119_7053494178380383132_n.png-81a5a876f5622367a1a7466b0588f67e.ctex"
+uid="uid://ddj225m5u4jtk"
+path="res://.godot/imported/evil.png-69c1a86361b3f3c0167c16fd4da3b314.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/404924075_1383253958986119_7053494178380383132_n.png"
-dest_files=["res://.godot/imported/404924075_1383253958986119_7053494178380383132_n.png-81a5a876f5622367a1a7466b0588f67e.ctex"]
+source_file="res://assets/characters/man/evil.png"
+dest_files=["res://.godot/imported/evil.png-69c1a86361b3f3c0167c16fd4da3b314.ctex"]
 
 [params]
 

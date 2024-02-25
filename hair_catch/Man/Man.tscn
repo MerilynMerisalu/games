@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbk74678pp3ar"]
+
+[ext_resource type="Texture2D" uid="uid://1iwx05gfq0lj" path="res://assets/characters/man/calm.png" id="1_nry83"]
+
+[sub_resource type="GDScript" id="GDScript_vqt1t"]
+script/source = "extends RigidBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+"
+
+[node name="Man" type="RigidBody2D"]
+position = Vector2(620, -138)
+script = SubResource("GDScript_vqt1t")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nry83")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 60)
+polygon = PackedVector2Array(-116, 103, -138, 159, -182, 183)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-200, 150, 130, 130)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

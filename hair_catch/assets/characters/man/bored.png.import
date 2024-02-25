@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt8nnil0vgh18"
-path="res://.godot/imported/405028835_397010556048724_8159817691372443953_n (1).png-31bd8acbf1318ad83ad41c14b23b6b2c.ctex"
+uid="uid://ca052y3mbiif5"
+path="res://.godot/imported/bored.png-4117bccd06852e6bf8afffd47fa7b670.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/405028835_397010556048724_8159817691372443953_n (1).png"
-dest_files=["res://.godot/imported/405028835_397010556048724_8159817691372443953_n (1).png-31bd8acbf1318ad83ad41c14b23b6b2c.ctex"]
+source_file="res://assets/characters/man/bored.png"
+dest_files=["res://.godot/imported/bored.png-4117bccd06852e6bf8afffd47fa7b670.ctex"]
 
 [params]
 

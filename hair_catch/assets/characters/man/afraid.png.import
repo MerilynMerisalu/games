@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ds4wbtip6qo"
-path="res://.godot/imported/405028835_397010556048724_8159817691372443953_n.png-b7b974641d657fd2ae10541d233ad6d5.ctex"
+uid="uid://boodyfwebhjoa"
+path="res://.godot/imported/afraid.png-f4c2cd363d8244e977a32a2b5a39379f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/405028835_397010556048724_8159817691372443953_n.png"
-dest_files=["res://.godot/imported/405028835_397010556048724_8159817691372443953_n.png-b7b974641d657fd2ae10541d233ad6d5.ctex"]
+source_file="res://assets/characters/man/afraid.png"
+dest_files=["res://.godot/imported/afraid.png-f4c2cd363d8244e977a32a2b5a39379f.ctex"]
 
 [params]
 

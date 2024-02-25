@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c13ly1mw531oe"
-path="res://.godot/imported/404957380_299258736483822_491252956199064421_n.png-ff5a0adbb7aaaae7017c4046e381830f.ctex"
+uid="uid://bkgc17l2lbmi3"
+path="res://.godot/imported/victorious.png-b8b3dbd1ff590e477e4d99b396e59223.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/man/404957380_299258736483822_491252956199064421_n.png"
-dest_files=["res://.godot/imported/404957380_299258736483822_491252956199064421_n.png-ff5a0adbb7aaaae7017c4046e381830f.ctex"]
+source_file="res://assets/characters/man/victorious.png"
+dest_files=["res://.godot/imported/victorious.png-b8b3dbd1ff590e477e4d99b396e59223.ctex"]
 
 [params]
 
