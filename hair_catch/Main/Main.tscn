@@ -32,4 +32,10 @@ position = Vector2(193, 429)
 
 [node name="LevelContainer" parent="." instance=ExtResource("5_ug5oi")]
 
+[node name="Men" type="Node" parent="."]
+
+[node name="CreateMenTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="CreateMenTimer" to="." method="_on_create_men_timer_timeout"]
