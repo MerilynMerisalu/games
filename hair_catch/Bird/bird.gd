@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends  CharacterBody2D
 
 var can_move : bool;
 func _ready() -> void:

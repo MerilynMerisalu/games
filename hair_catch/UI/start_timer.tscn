@@ -3,10 +3,8 @@
 [sub_resource type="GDScript" id="GDScript_lefg7"]
 script/source = "extends BoxContainer
 
-signal is_ended;
+signal label_hidden;
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,7 +14,12 @@ func _process(_delta: float) -> void:
 
 func _on_start_timer_timeout() -> void:
 	$StartLabel.visible = false;
-	is_ended.emit()
+	
+func _on_visibility_changed():
+	if visible == false:
+		label_hidden.emit()
+
+
 "
 
 [node name="StartTimerContainer" type="BoxContainer"]

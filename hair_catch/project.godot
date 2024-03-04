@@ -21,6 +21,7 @@ boot_splash/minimum_display_time=3000
 [autoload]
 
 Screen="*res://screen.gd"
+EventBus="*res://eventBus.gd"
 
 [display]
 
