@@ -1,6 +1,6 @@
 extends BoxContainer
 
-
+signal start_label_finished;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Level.visible = true;
@@ -17,7 +17,5 @@ func _on_level_timer_timeout() -> void:
 	$StartTimerContainer/StartTimer.start();
 	$Counting.play();
 
-
-
-
- 
+func _on_start_timer_container_label_hidden() -> void:
+	start_label_finished.emit()

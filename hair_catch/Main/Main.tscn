@@ -36,10 +36,6 @@ position = Vector2(193, 429)
 
 [node name="CreateMenTimer" type="Timer" parent="."]
 
-[node name="CreateMenDelayTimer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="start_label_finished" from="LevelContainer" to="." method="_on_level_container_start_label_finished"]
 [connection signal="timeout" from="CreateMenTimer" to="." method="_on_create_men_timer_timeout"]
-[connection signal="timeout" from="CreateMenDelayTimer" to="." method="_on_create_men_delay_timer_timeout"]

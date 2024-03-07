@@ -49,3 +49,4 @@ autoplay = true
 layout_mode = 2
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="label_hidden" from="StartTimerContainer" to="." method="_on_start_timer_container_label_hidden"]

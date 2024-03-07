@@ -14,10 +14,9 @@ func _process(_delta: float) -> void:
 
 func _on_start_timer_timeout() -> void:
 	$StartLabel.visible = false;
+	label_hidden.emit();
 	
-func _on_visibility_changed():
-	if visible == false:
-		label_hidden.emit()
+
 
 
 "

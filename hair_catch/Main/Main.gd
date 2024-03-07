@@ -16,7 +16,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
 	_reset_timer()
 	$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.BLACK;
-
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -54,6 +54,5 @@ func _on_create_men_timer_timeout() -> void:
 	var man = MAN_SCENE.instantiate();
 	$Men.add_child(man);
 
-
-func _on_create_men_delay_timer_timeout() -> void:
-	_on_create_men_timer_timeout()
+func _on_level_container_start_label_finished() -> void:
+	_on_create_men_timer_timeout();
