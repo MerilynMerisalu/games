@@ -3,6 +3,7 @@ extends Node
 
 @onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
 const MAN_SCENE : PackedScene = preload("res://Man/Man.tscn");
+const HAIR_LEFT : String = " Hair Left";
 var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes = 0;
@@ -14,6 +15,7 @@ var hair_left : int = 5;
 func _ready():
 	$LevelContainer/StartTimerContainer/StartLabel.visible = false;
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
+	$ColorRect/UI/HairContainer/HairLeftLabel.text = str(hair_left) + HAIR_LEFT;
 	_reset_timer()
 	$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.BLACK;
 	
