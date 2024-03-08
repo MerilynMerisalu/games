@@ -1,15 +1,14 @@
 extends Node
 
-
-@onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
 const MAN_SCENE : PackedScene = preload("res://Man/Man.tscn");
 const HAIR_LEFT : String = " Hair Left";
+@onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
 var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes = 0;
 var seconds = 0;
-var hair_left : int = 0;
-
+var hair_left : int = 5;
+@onready var game_timer: Timer = get_node("GameTimer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,5 +56,5 @@ func _on_create_men_timer_timeout() -> void:
 	$Men.add_child(man);
 
 func _on_level_container_start_label_finished() -> void:
-	if hair_left > 0:
+	if hair_left > 0 and game_timer.is_stopped() == false:
 		_on_create_men_timer_timeout();
