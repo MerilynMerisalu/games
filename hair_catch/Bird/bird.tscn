@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq16helqlma2s"]
+[gd_scene load_steps=6 format=3 uid="uid://cq16helqlma2s"]
 
 [ext_resource type="Script" path="res://Bird/bird.gd" id="1_neeh5"]
 [ext_resource type="Texture2D" uid="uid://c5flly6fgbfgp" path="res://assets/characters/bird/bird wing up.png" id="2_1dqtc"]
@@ -26,7 +26,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiqp0"]
+size = Vector2(133.111, 166.864)
+
+[node name="Bird" type="CharacterBody2D"]
 position = Vector2(699, 433)
 rotation = 0.0377486
 scale = Vector2(0.4, 0.4)
@@ -37,8 +40,9 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_5vs0u")
 animation = &"fly"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-527.473, 430.213, -504.911, 409.347, -546.015, 380.878, -583.033, 372.269, -609.177, 386.599, -600.628, 436.312)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(356.714, -416.602)
+shape = SubResource("RectangleShape2D_uiqp0")
 
 [node name="MovingTimer" type="Timer" parent="."]
 wait_time = 2.2
