@@ -8,7 +8,7 @@ var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes = 0;
 var seconds = 0;
-var hair_left : int = 5;
+var hair_left : int = 0;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -57,4 +57,5 @@ func _on_create_men_timer_timeout() -> void:
 	$Men.add_child(man);
 
 func _on_level_container_start_label_finished() -> void:
-	_on_create_men_timer_timeout();
+	if hair_left > 0:
+		_on_create_men_timer_timeout();
