@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal hit;
+
 var can_move : bool;
 func _ready() -> void:
 	position = Vector2(137, 429);
