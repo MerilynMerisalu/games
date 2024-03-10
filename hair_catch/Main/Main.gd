@@ -64,6 +64,8 @@ func _on_level_container_start_label_finished() -> void:
 func _on_hair_caught():
 	if hair_left > 0:
 		hair_left -= 1;
+		score += 5;
 		$ColorRect/UI/HairContainer/HairLeftLabel.text = str(hair_left) \
 			+ HAIR_LEFT;
+		$ColorRect/UI/ScoreContainer/Score.text = str(score);
 
