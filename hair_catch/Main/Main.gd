@@ -8,7 +8,8 @@ var default_seconds : int = 31;
 var minutes = 0;
 var seconds = 0;
 var hair_left : int = 5;
-@onready var game_timer: Timer = get_node("GameTimer")
+var score: int = 0;
+@onready var game_timer: Timer = get_node("GameTimer");
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +18,7 @@ func _ready():
 	$ColorRect/UI/HairContainer/HairLeftLabel.text = str(hair_left) + HAIR_LEFT;
 	_reset_timer()
 	$ColorRect/UI/TimerContainer/GameTimerLabel.modulate = Color.BLACK;
-	
+	EventBus.connect("hair_caught", _on_hair_caught);
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -58,3 +59,13 @@ func _on_create_men_timer_timeout() -> void:
 func _on_level_container_start_label_finished() -> void:
 	if hair_left > 0 and game_timer.is_stopped() == false:
 		_on_create_men_timer_timeout();
+	
+	
+func _on_hair_caught() -> void:
+	if (hair_left > 0):
+		hair_left -= 1;
+		$ColorRect/UI/HairContainer/HairLeftLabel.text = str(hair_left) \
+		+ HAIR_LEFT;
+		score += 5;
+		$ColorRect/UI/ScoreContainer/Score.text = str(score);	
+	

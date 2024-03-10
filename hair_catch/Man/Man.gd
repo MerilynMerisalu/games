@@ -18,3 +18,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(_body: Node2D) -> void:
 	$Sprite2D.texture = CRY_IMG;
 	$Pain.play();
+	EventBus.hair_caught.emit();
