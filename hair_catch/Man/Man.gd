@@ -18,10 +18,11 @@ func _process(_delta: float) -> void:
 
 
 
-func _on_body_entered(_body: Node) -> void:
-	$"Sprite2D".texture = CRY_IMG;
-	$Pain.play();
-	EventBus.hair_caught.emit();
+func _on_body_entered(body: Node) -> void:
+	if(body.name == "Bird"):
+		$"Sprite2D".texture = CRY_IMG;
+		$Pain.play();
+		EventBus.hair_caught.emit();
 
 
 
