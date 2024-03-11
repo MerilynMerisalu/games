@@ -19,6 +19,13 @@ func _on_level_sound_effect_obtained_from_pressed() -> void:
 	OS.shell_open("https://www.zapsplat.com/");
 	
 
-
 func _on_start_counter_sound_effect_obtained_from_link_button_pressed() -> void:
 	OS.shell_open("https://elements.envato.com/cartoon-character-counting-to-three-fast-2LM2SGJ")
+
+
+func _on_man_character_sprites_obtained_from_link_button_pressed() -> void:
+	OS.shell_open("https://www.freepik.com/");
+
+
+func _on_pain_sound_effect_obtained_from_link_button_pressed() -> void:
+	OS.shell_open("https://www.zapsplat.com/");

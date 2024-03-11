@@ -301,6 +301,113 @@ theme_override_font_sizes/font_size = 77
 text = "elements.envato.com/cartoon-character-counting-to-three-fast-2LM2SGJ"
 uri = "https://elements.envato.com/"
 
+[node name="ManCharacterSpriteBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1338.0
+offset_right = 40.0
+offset_bottom = 1378.0
+alignment = 1
+
+[node name="ManCharacterSpriteLabel" type="Label" parent="ManCharacterSpriteBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Man Character Sprites: "
+
+[node name="ManCharacterSpriteLinkButton" type="LinkButton" parent="ManCharacterSpriteBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com/premium-vector/vector-cartoon-illustration-cute-bald-man-set_24672475.htm?fbclid=IwAR0kJuoOU-scGF8ack_c4GO_RwOVe-KJXZmaMnuAkOh_05l9GuTqfTCZwUg"
+uri = "https://www.freepik.com/premium-vector/vector-cartoon-illustration-cute-bald-man-set_24672475.htm?fbclid=IwAR0kJuoOU-scGF8ack_c4GO_RwOVe-KJXZmaMnuAkOh_05l9GuTqfTCZwUg"
+
+[node name="ManCharacterSpritesAuthorBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1428.0
+offset_right = 40.0
+offset_bottom = 1468.0
+
+[node name="ManCharacterSpritesAuthorLabel" type="Label" parent="ManCharacterSpritesAuthorBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Man Character Sprites: killustrations"
+
+[node name="ManCharacterSpritesObtainedFrom" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 1526.0
+offset_right = 1068.0
+offset_bottom = 1592.0
+
+[node name="ManCharacterSpritesObtainedFromLabel" type="Label" parent="ManCharacterSpritesObtainedFrom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Man Character Sprites from: "
+
+[node name="ManCharacterSpritesObtainedFromLinkButton" type="LinkButton" parent="ManCharacterSpritesObtainedFrom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com"
+uri = "https://www.freepik.com/"
+
+[node name="PainSoundEffectTitleBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1618.0
+offset_right = 40.0
+offset_bottom = 1658.0
+
+[node name="PainSoundEffectTitleLabel" type="Label" parent="PainSoundEffectTitleBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Title of the Pain Sound Effect: Male grunt, ouch, in pain 2"
+
+[node name="PainSoundEffectAuthorBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1721.0
+offset_right = 40.0
+offset_bottom = 1761.0
+
+[node name="PainSoundEffectAuthorLabel" type="Label" parent="PainSoundEffectAuthorBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Pain Sound Effect: ZapSplat"
+
+[node name="PainSoundEffectObtainedFromBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1802.0
+offset_right = 40.0
+offset_bottom = 1842.0
+
+[node name="PainSoundEffectObtainedFromLabel" type="Label" parent="PainSoundEffectObtainedFromBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Pain Sound Effect From: "
+
+[node name="PainSoundEffectObtainedFromLinkButton" type="LinkButton" parent="PainSoundEffectObtainedFromBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "www.zapsplat.com"
+uri = "https://www.zapsplat.com/"
+
 [connection signal="pressed" from="SoundtrackObtainedFromBoxContainer/SoundtrackLink" to="." method="_on_soundtrack_link_pressed"]
 [connection signal="pressed" from="LevelSoundEffectObtainedFrom/LevelSoundEffectObtainedFrom" to="." method="_on_level_sound_effect_obtained_from_pressed"]
 [connection signal="pressed" from="StartCounterSoundEffectObtainedFromBoxContainer/StartCounterSoundEffectObtainedFromLinkButton" to="." method="_on_start_counter_sound_effect_obtained_from_link_button_pressed"]
+[connection signal="pressed" from="ManCharacterSpriteBoxContainer/ManCharacterSpriteLinkButton" to="." method="_on_link_button_pressed"]
+[connection signal="pressed" from="ManCharacterSpritesObtainedFrom/ManCharacterSpritesObtainedFromLinkButton" to="." method="_on_man_character_sprites_obtained_from_link_button_pressed"]
+[connection signal="pressed" from="PainSoundEffectObtainedFromBoxContainer/PainSoundEffectObtainedFromLinkButton" to="." method="_on_pain_sound_effect_obtained_from_link_button_pressed"]
