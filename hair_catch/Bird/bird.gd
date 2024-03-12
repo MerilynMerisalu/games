@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
 signal hit;
+var can_move: bool = false;
 
-var can_move : bool;
 func _ready() -> void:
 	position = Vector2(137, 429);
-	can_move = false;
+	EventBus.bird_can_move.connect(move);
 # Should be executed with signals
 func _input(event: InputEvent) -> void:
-	if (can_move == true):
-		if event is InputEventMouseMotion:
+	if(can_move == true):
+		if (event is InputEventMouseMotion):
 			position = get_global_mouse_position();
 		
 
-
-func _on_moving_timer_timeout() -> void:
+func move() -> void:
 	can_move = true;
+

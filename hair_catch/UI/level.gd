@@ -1,6 +1,7 @@
 extends BoxContainer
 
 signal start_label_finished;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Level.visible = true;
