@@ -3,8 +3,8 @@ extends Node
 const MAN_SCENE : PackedScene = preload("res://Man/Man.tscn");
 const HAIR_LEFT : String = " Hair Left";
 @onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
-var default_minutes :int = 1;
-var default_seconds : int = 31;
+var default_minutes :int = 0;
+var default_seconds : int = 15;
 var minutes = 0;
 var seconds = 0;
 var hair_left : int = 10;
@@ -24,7 +24,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 		Screen.change_window_mode();
-		
+		game_over();
 		
 	
 func _reset_timer() -> void:
@@ -69,3 +69,7 @@ func _on_hair_caught():
 			+ HAIR_LEFT;
 		$ColorRect/UI/ScoreContainer/Score.text = str(score);
 
+
+func game_over() -> void:
+	if(game_timer.is_stopped() == true and hair_left > 0):
+		get_tree().change_scene_to_file("res://Lose/Loss.tscn");
