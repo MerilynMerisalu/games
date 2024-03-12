@@ -7,7 +7,7 @@ var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes = 0;
 var seconds = 0;
-var hair_left : int = 5;
+var hair_left : int = 10;
 var score : int = 0;
 @onready var game_timer: Timer = get_node("GameTimer")
 
