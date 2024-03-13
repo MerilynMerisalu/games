@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dt03dccxhppqn"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_7cklf"]
-[ext_resource type="Script" path="res://UI/level.gd" id="1_r0kyd"]
+[ext_resource type="Script" path="res://UI/Level.gd" id="1_r0kyd"]
 [ext_resource type="AudioStream" uid="uid://dd15aydkiawo6" path="res://assets/audio/bird.wav" id="2_fugjo"]
 [ext_resource type="AudioStream" uid="uid://b51db2jppm7t5" path="res://assets/audio/Level music.mp3" id="3_jidwq"]
 [ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/start_timer.tscn" id="5_2m8by"]
@@ -28,7 +28,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_7cklf")
 theme_override_font_sizes/font_size = 77
-text = "Level 1
+text = "
 "
 horizontal_alignment = 1
 vertical_alignment = 1
