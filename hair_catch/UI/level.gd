@@ -4,10 +4,11 @@ signal start_label_finished;
 const HAIR_LEFT : String = " Hair Left";
 @onready var game_timer_label : Label = get_node("../UI/TimerContainer/GameTimerLabel")
 @onready var hair_left_label : Label = get_node("../UI/HairContainer/HairLeftLabel")
-var level : int = 1
+@onready var game_timer: Timer = get_node("GameTimer")
+
+var level : int = 1;
 var score : int = 0;
 var hair_left : int = 10;
-@onready var game_timer: Timer = get_node("GameTimer")
 var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes = 0;
@@ -39,7 +40,6 @@ func _on_level_changed() -> void:
 	$Level.visible = true;
 	$Level.text = "Level " + str(level);
 	
-
 
 func _on_hair_caught():
 	if hair_left > 0:
