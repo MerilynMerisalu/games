@@ -48,5 +48,11 @@ autoplay = true
 [node name="StartTimerContainer" parent="." instance=ExtResource("5_2m8by")]
 layout_mode = 2
 
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Ticking" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="label_hidden" from="StartTimerContainer" to="." method="_on_start_timer_container_label_hidden"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
