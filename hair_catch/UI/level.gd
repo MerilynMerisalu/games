@@ -3,14 +3,15 @@ extends BoxContainer
 signal start_label_finished;
 const HAIR_LEFT : String = " Hair Left";
 @onready var game_timer_label : Label = get_node("../UI/TimerContainer/GameTimerLabel")
-@onready var hair_left_label : Label = get_node("../UI/HairContainer/HairLeftLabel")
+@onready var hair_left_label : Label = get_node("../UI/HairContainer/HairLeftLabel");
+@onready var score_label : Label = get_node("../UI/ScoreContainer/ScoreLabel");
 @onready var game_timer: Timer = get_node("GameTimer")
 
 var level : int = 1;
 var score : int = 0;
 var hair_left : int = 10;
-var default_minutes :int = 1;
-var default_seconds : int = 31;
+var default_minutes :int = 0;
+var default_seconds : int = 3;
 var minutes = 0;
 var seconds = 0;
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,8 @@ func _ready() -> void:
 	hair_left_label.text = str(hair_left) + HAIR_LEFT;
 	_on_level_changed();
 	_reset_timer();
+	_on_level_container_start_label_finished()
+	EventBus.connect("hair_caught", _on_hair_caught)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,8 +37,8 @@ func _on_level_timer_timeout() -> void:
 
 func _on_start_timer_container_label_hidden() -> void:
 	start_label_finished.emit();
-
-
+	
+	
 func _on_level_changed() -> void:
 	$Level.visible = true;
 	$Level.text = "Level " + str(level);
@@ -45,16 +48,17 @@ func _on_hair_caught():
 	if hair_left > 0:
 		hair_left -= 1;
 		score += 5;
-		$ColorRect/UI/HairContainer/HairLeftLabel.text = str(hair_left) \
-			+ HAIR_LEFT;
-		$ColorRect/UI/ScoreContainer/Score.text = str(score);
+		hair_left_label.text = str(hair_left) + HAIR_LEFT;
+		score_label.text = str(score);
 
 
 func _on_level_container_start_label_finished() -> void:
-	if hair_left > 0 and game_timer.is_stopped() == false:
-		print("Making progress");
-		
-		
+	if hair_left > 0:
+		EventBus.create_man.emit();
+	
+
+
+
 		
 func game_over() -> void:
 		if(game_timer.is_stopped() == true and hair_left > 0):
@@ -81,5 +85,7 @@ func _on_game_timer_timeout() -> void:
 		$Ticking.stop();
 	game_timer_label.text = str(minutes) + ":" + str(seconds);
 		
+
+
 
 

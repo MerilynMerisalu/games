@@ -4,7 +4,7 @@ extends RigidBody2D
 const CRY_IMG : Texture = preload("res://assets/characters/man/cry.png");
 var screen_size;
 var is_collided: bool = false;
-
+@onready var men : Node = get_node("/root/Main/Men")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = Screen.screen_size;
@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-
+ 
 
 func _on_body_entered(body: Node) -> void:
 	if(body.name == "Bird" and is_collided == false):

@@ -1,7 +1,9 @@
 extends Node
 
 signal hair_caught;
+signal create_man;
 signal bird_can_move;
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

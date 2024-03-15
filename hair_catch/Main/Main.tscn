@@ -23,9 +23,8 @@ position = Vector2(193, 429)
 
 [node name="Men" type="Node" parent="."]
 
-[node name="CreateMenTimer" type="Timer" parent="."]
-
 [node name="UI" parent="." instance=ExtResource("2_0u2tk")]
 
-[connection signal="start_label_finished" from="LevelContainer" to="." method="_on_level_container_start_label_finished"]
-[connection signal="timeout" from="CreateMenTimer" to="." method="_on_create_men_timer_timeout"]
+[node name="CreateManTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]
