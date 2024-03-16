@@ -10,8 +10,8 @@ const HAIR_LEFT : String = " Hair Left";
 var level : int = 1;
 var score : int = 0;
 var hair_left : int = 10;
-var default_minutes :int = 0;
-var default_seconds : int = 3;
+var default_minutes :int = 1;
+var default_seconds : int = 30;
 var minutes = 0;
 var seconds = 0;
 # Called when the node enters the scene tree for the first time.
@@ -26,7 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	game_over()
 
 func _on_level_timer_timeout() -> void:
 	$Level.visible = false;
@@ -53,8 +53,12 @@ func _on_hair_caught():
 
 
 func _on_level_container_start_label_finished() -> void:
-	if hair_left > 0:
+	if game_timer.is_stopped() == false:
+		print("It's alive");
 		EventBus.create_man.emit();
+	else:
+		print("It's dead!");
+		print(hair_left)
 	
 
 
