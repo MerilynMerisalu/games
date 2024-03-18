@@ -92,9 +92,7 @@ func _on_game_timer_timeout() -> void:
 
 
 func on_level_changed() -> void:
-		print(level)
 		level += 1;
-		print(level)
 		_on_display_level_changed();
 		
 		
