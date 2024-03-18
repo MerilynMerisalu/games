@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://UI/Level.gd" id="1_r0kyd"]
 [ext_resource type="AudioStream" uid="uid://dd15aydkiawo6" path="res://assets/audio/bird.wav" id="2_fugjo"]
 [ext_resource type="AudioStream" uid="uid://b51db2jppm7t5" path="res://assets/audio/Level music.mp3" id="3_jidwq"]
-[ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/start_timer.tscn" id="5_2m8by"]
+[ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/StartTimer.tscn" id="5_2m8by"]
 [ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="6_s7c33"]
 
 [node name="LevelContainer" type="BoxContainer"]
