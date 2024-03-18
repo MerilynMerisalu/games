@@ -9,7 +9,6 @@ const HAIR_LEFT : String = " Hair Left";
 @onready var game_timer: Timer = get_node("GameTimer")
 
 var level : int = 1;
-var score : int = 0;
 var hair_left : int = 10;
 var default_minutes :int = 1;
 var default_seconds : int = 30;
@@ -51,18 +50,17 @@ func _on_display_level_changed() -> void:
 func _on_hair_caught():
 	if hair_left > 0:
 		hair_left -= 1;
-		score += 5;
+		EventBus.score += 5;
 		hair_left_label.text = str(hair_left) + HAIR_LEFT;
-		score_label.text = str(score);
+		score_label.text = str(EventBus.score);
 	else:
 		EventBus.level_up.emit()
-		on_level_changed()
+		
 		
 
 
 func _on_level_container_start_label_finished() -> void:
 	if game_timer.is_stopped() == false:
-		print("It's alive");
 		EventBus.create_man.emit();
 
 func game_over() -> void:
@@ -94,7 +92,9 @@ func _on_game_timer_timeout() -> void:
 
 
 func on_level_changed() -> void:
-		level = 2;
+		print(level)
+		level += 1;
+		print(level)
 		_on_display_level_changed();
 		
 		

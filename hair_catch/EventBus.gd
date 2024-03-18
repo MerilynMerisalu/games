@@ -1,10 +1,10 @@
 extends Node
-
-
 signal hair_caught;
 signal create_man;
 signal bird_can_move;
 signal level_up;
+
+var score : int = 0;
 
 
 # Called when the node enters the scene tree for the first time.

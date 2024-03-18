@@ -16,7 +16,6 @@ func _process(_delta):
 		Screen.change_window_mode();
 		
 	
-	
 
 func _on_link_button_pressed() -> void:
 	OS.shell_open("https://www.zapsplat.com/");
@@ -29,4 +28,4 @@ func _on_create_man() -> void:
 
 func _on_stop_create_man() -> void:
 	is_creating_men = false;
-	print(is_creating_men)
+	
