@@ -54,7 +54,7 @@ func _on_hair_caught():
 		score += 5;
 		hair_left_label.text = str(hair_left) + HAIR_LEFT;
 		score_label.text = str(score);
-	elif hair_left == 0 and game_timer.is_stopped() == false:
+	else:
 		EventBus.level_up.emit()
 		on_level_changed()
 		
@@ -94,7 +94,7 @@ func _on_game_timer_timeout() -> void:
 
 
 func on_level_changed() -> void:
-		level +=1 ;
+		level = 2;
 		_on_display_level_changed();
 		
 		
