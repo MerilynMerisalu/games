@@ -42,11 +42,10 @@ func _on_start_timer_container_label_hidden() -> void:
 	
 	
 func _on_display_level_changed() -> void:
-	
 	$Level.visible = true;
 	$LevelMusic.play();
 	$Level.text = "Level " + str(level);
-	start_label_finished.emit()
+	$LevelTimer.start();
 	
 
 func _on_hair_caught():
@@ -95,7 +94,7 @@ func _on_game_timer_timeout() -> void:
 
 
 func on_level_changed() -> void:
-		level = 2;
+		level +=1 ;
 		_on_display_level_changed();
 		
 		
