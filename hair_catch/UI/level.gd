@@ -54,7 +54,8 @@ func _on_hair_caught():
 		hair_left_label.text = str(hair_left) + HAIR_LEFT;
 		score_label.text = str(EventBus.score);
 	else:
-		EventBus.level_up.emit()
+		EventBus.level_up.emit();
+		game_timer.stop();
 		
 		
 
