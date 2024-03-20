@@ -1,9 +1,11 @@
 extends Node
+
 signal hair_caught;
 signal create_man;
 signal bird_can_move;
 signal level_up;
 
+var is_level_passed : bool = false;
 var score : int = 0;
 
 

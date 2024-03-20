@@ -11,7 +11,7 @@ const HAIR_LEFT : String = " Hair Left";
 var level : int = 1;
 var hair_left : int = 10;
 var default_minutes :int = 1;
-var default_seconds : int = 30;
+var default_seconds : int = 31;
 var minutes = 0;
 var seconds = 0;
 # Called when the node enters the scene tree for the first time.
@@ -56,7 +56,7 @@ func _on_hair_caught():
 	else:
 		EventBus.level_up.emit();
 		game_timer.stop();
-		
+		EventBus.is_level_passed = true;
 		
 
 
@@ -68,8 +68,7 @@ func game_over() -> void:
 		if(game_timer.is_stopped() == true and hair_left > 0):
 			get_tree().change_scene_to_file("res://Lose/Loss.tscn");
 			
-			
-			
+					
 func _reset_timer() -> void:
 	minutes = default_minutes;
 	seconds = default_seconds;

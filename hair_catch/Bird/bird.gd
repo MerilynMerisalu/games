@@ -6,6 +6,7 @@ var can_move: bool = false;
 func _ready() -> void:
 	position = Vector2(137, 429);
 	EventBus.bird_can_move.connect(move);
+	
 
 func _input(event: InputEvent) -> void:
 	if(can_move == true):
@@ -15,4 +16,10 @@ func _input(event: InputEvent) -> void:
 
 func move() -> void:
 	can_move = true;
+	if(EventBus.is_level_passed == true):
+		can_move = false;
+		EventBus.bird_can_move.disconnect(move);
+		_ready();
+		
+
 
