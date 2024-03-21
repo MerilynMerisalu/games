@@ -4,7 +4,9 @@ signal hair_caught;
 signal create_man;
 signal bird_can_move;
 signal level_up;
+signal hair_left_label_refresed(hair_left: int);
 
+const HAIR_LEFT : String = " Hair Left";
 var is_level_passed : bool = false;
 var score : int = 0;
 

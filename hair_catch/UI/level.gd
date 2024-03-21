@@ -2,11 +2,14 @@ extends BoxContainer
 
 
 signal start_label_finished;
-const HAIR_LEFT : String = " Hair Left";
+signal change_hair_count(hair_left: int);
+
 @onready var game_timer_label : Label = get_node("../UI/TimerContainer/GameTimerLabel")
 @onready var hair_left_label : Label = get_node("../UI/HairContainer/HairLeftLabel");
 @onready var score_label : Label = get_node("../UI/ScoreContainer/ScoreLabel");
 @onready var game_timer: Timer = get_node("GameTimer")
+
+const INITIAL_NUMBER_HAIR_LEFT : int = 10;
 
 var level : int = 1;
 var hair_left : int = 10;
@@ -17,7 +20,7 @@ var seconds = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_timer_label.modulate = Color.BLACK;
-	hair_left_label.text = str(hair_left) + HAIR_LEFT;
+	hair_left_label.text = str(hair_left) + EventBus.HAIR_LEFT;
 	_on_display_level_changed();
 	_reset_timer();
 	_on_level_container_start_label_finished()
@@ -51,12 +54,13 @@ func _on_hair_caught():
 	if hair_left > 0:
 		hair_left -= 1;
 		EventBus.score += 5;
-		hair_left_label.text = str(hair_left) + HAIR_LEFT;
+		hair_left_label.text = str(hair_left) + EventBus.HAIR_LEFT;
 		score_label.text = str(EventBus.score);
 	else:
 		EventBus.level_up.emit();
 		game_timer.stop();
 		EventBus.is_level_passed = true;
+		refresh_hair_label()
 		
 
 
@@ -65,8 +69,9 @@ func _on_level_container_start_label_finished() -> void:
 		EventBus.create_man.emit();
 
 func game_over() -> void:
-		if(game_timer.is_stopped() == true and hair_left > 0):
-			get_tree().change_scene_to_file("res://Lose/Loss.tscn");
+		if (EventBus.is_level_passed == false):
+			if(game_timer.is_stopped() == true and hair_left > 0):
+				get_tree().change_scene_to_file("res://Lose/Loss.tscn");
 			
 					
 func _reset_timer() -> void:
@@ -94,5 +99,13 @@ func _on_game_timer_timeout() -> void:
 func on_level_changed() -> void:
 		level += 1;
 		_on_display_level_changed();
+		
+		
+
+func refresh_hair_label() -> void:
+	hair_left = INITIAL_NUMBER_HAIR_LEFT + 5;
+	EventBus.hair_left_label_refresed.emit(hair_left)
+	
+		
 		
 		
