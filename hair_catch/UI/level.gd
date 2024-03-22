@@ -113,11 +113,9 @@ func _on_refresh_game_timer_label() -> void:
 		if (default_seconds == 0):
 			if (default_minutes > 0):
 				default_minutes -= 1;
-				default_seconds -= 9;
-				print(default_minutes, default_seconds) 
+				default_seconds -= 9; 
 		else:
 			default_seconds -= 9;
-			print(default_seconds)
 			_reset_timer();
 			EventBus.game_timer_label_refresed.emit(default_minutes, default_seconds);
 			game_timer.start();
