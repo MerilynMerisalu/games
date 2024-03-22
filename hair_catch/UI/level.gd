@@ -24,8 +24,8 @@ func _ready() -> void:
 	_reset_timer();
 	_on_level_container_start_label_finished()
 	EventBus.connect("hair_caught", _on_hair_caught)
-	EventBus.connect("level_up", on_level_changed)
-
+	EventBus.connect("level_up", _on_level_changed)
+	#EventBus.connect()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	game_over()
@@ -59,7 +59,8 @@ func _on_hair_caught():
 		EventBus.level_up.emit();
 		game_timer.stop();
 		EventBus.is_level_passed = true;
-		refresh_hair_label()
+		_on_refresh_hair_label();
+		_on_refresh_game_timer_label();
 		
 
 
@@ -95,18 +96,29 @@ func _on_game_timer_timeout() -> void:
 
 
 
-func on_level_changed() -> void:
+func _on_level_changed() -> void:
 		level += 1;
 		_on_display_level_changed();
 		
 		
 
-func refresh_hair_label() -> void:
+func _on_refresh_hair_label() -> void:
 	hair_left = 10;
 	if (EventBus.is_level_passed == true):
 		hair_left += 5;
 		EventBus.hair_left_label_refresed.emit(hair_left);
-	
 		
-		
-		
+func _on_refresh_game_timer_label() -> void:
+	if(EventBus.is_level_passed == true):
+		if (default_seconds == 0):
+			if (default_minutes > 0):
+				default_minutes -= 1;
+				default_seconds -= 9;
+				print(default_minutes, default_seconds) 
+		else:
+			default_seconds -= 9;
+			print(default_seconds)
+			_reset_timer();
+			EventBus.game_timer_label_refresed.emit(default_minutes, default_seconds);
+			game_timer.start();
+			_on_game_timer_timeout();			

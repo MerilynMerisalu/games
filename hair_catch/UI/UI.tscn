@@ -1,24 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://04qiebq6u6dt"]
+[gd_scene load_steps=3 format=3 uid="uid://04qiebq6u6dt"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_467ea"]
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_u64rs"]
-
-[sub_resource type="GDScript" id="GDScript_5jev1"]
-script/source = "extends Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
-
-"
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -41,7 +24,6 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 77
 text = "00:00"
-script = SubResource("GDScript_5jev1")
 
 [node name="ScoreContainer" type="BoxContainer" parent="."]
 layout_mode = 1
