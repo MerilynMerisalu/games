@@ -103,8 +103,9 @@ func on_level_changed() -> void:
 
 func refresh_hair_label() -> void:
 	hair_left = 10;
-	hair_left += 5;
-	EventBus.hair_left_label_refresed.emit(hair_left)
+	if (EventBus.is_level_passed == true):
+		hair_left += 5;
+		EventBus.hair_left_label_refresed.emit(hair_left);
 	
 		
 		
