@@ -9,7 +9,6 @@ signal change_hair_count(hair_left: int);
 @onready var score_label : Label = get_node("../UI/ScoreContainer/ScoreLabel");
 @onready var game_timer: Timer = get_node("GameTimer")
 
-const INITIAL_NUMBER_HAIR_LEFT : int = 10;
 
 var level : int = 1;
 var hair_left : int = 10;
@@ -103,7 +102,8 @@ func on_level_changed() -> void:
 		
 
 func refresh_hair_label() -> void:
-	hair_left = INITIAL_NUMBER_HAIR_LEFT + 5;
+	hair_left = 10;
+	hair_left += 5;
 	EventBus.hair_left_label_refresed.emit(hair_left)
 	
 		
