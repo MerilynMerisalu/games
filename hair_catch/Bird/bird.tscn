@@ -43,3 +43,8 @@ animation = &"fly"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(356.714, -416.602)
 shape = SubResource("RectangleShape2D_uiqp0")
+
+[node name="MovingTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="MovingTimer" to="." method="_on_moving_timer_timeout"]
