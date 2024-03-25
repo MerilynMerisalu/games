@@ -1,7 +1,7 @@
 extends BoxContainer
 
 
-signal start_label_finished;
+#signal start_label_finished;
 signal change_hair_count(hair_left: int);
 
 @onready var game_timer_label : Label = get_node("../UI/TimerContainer/GameTimerLabel")
@@ -39,7 +39,8 @@ func _on_level_timer_timeout() -> void:
 
 
 func _on_start_timer_container_label_hidden() -> void:
-	start_label_finished.emit();
+	EventBus.start_label_finished.emit();
+	EventBus.is_start_label_finished = true
 	
 	
 func _on_display_level_changed() -> void:
@@ -72,7 +73,7 @@ func game_over() -> void:
 		if (EventBus.is_level_passed == false):
 			if(game_timer.is_stopped() == true and hair_left > 0):
 				get_tree().change_scene_to_file("res://Lose/Loss.tscn");
-			
+				
 					
 func _reset_timer() -> void:
 	minutes = default_minutes;

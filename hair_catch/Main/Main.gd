@@ -8,7 +8,7 @@ var is_creating_men : bool = true;
 func _ready():
 	$LevelContainer/StartTimerContainer/StartLabel.visible = false;
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
-	$LevelContainer.connect("start_label_finished", _on_create_man);
+	EventBus.connect("start_label_finished", _on_create_man);
 	EventBus.connect("level_up", _on_stop_create_man )
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

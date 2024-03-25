@@ -20,10 +20,9 @@ func move() -> void:
 		can_move = false;
 		EventBus.bird_can_move.disconnect(move);
 		_ready();
-		print(EventBus.is_level_passed);
-		_on_moving_timer_timeout();
-		print(EventBus.is_level_passed);
+		if(EventBus.is_start_label_finished == true):
+			EventBus.is_level_passed = false;
+		
 
-func _on_moving_timer_timeout() -> void:
-	EventBus.is_level_passed = false;
+
 	

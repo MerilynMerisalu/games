@@ -13,4 +13,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_replay_button_pressed() -> void:
+	EventBus.score = 0;
 	get_tree().change_scene_to_file("res://Main/Main.tscn");
