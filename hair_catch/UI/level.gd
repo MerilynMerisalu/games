@@ -1,7 +1,7 @@
-extends BoxContainer
+class_name level_base extends BoxContainer
 
 
-#signal start_label_finished;
+
 signal change_hair_count(hair_left: int);
 
 @onready var game_timer_label : Label = get_node("../UI/TimerContainer/GameTimerLabel")
@@ -25,7 +25,7 @@ func _ready() -> void:
 	_on_level_container_start_label_finished()
 	EventBus.connect("hair_caught", _on_hair_caught)
 	EventBus.connect("level_up", _on_level_changed)
-	#EventBus.connect()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	game_over()

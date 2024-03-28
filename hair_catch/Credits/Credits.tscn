@@ -405,9 +405,81 @@ theme_override_font_sizes/font_size = 77
 text = "www.zapsplat.com"
 uri = "https://www.zapsplat.com/"
 
+[node name="BirdCharcterBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1913.0
+offset_right = 46.0
+offset_bottom = 1979.0
+
+[node name="BirdCharacterSpritesLabel" type="Label" parent="BirdCharcterBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Bird Character sprites: "
+
+[node name="BirdCharacterSpritesLinkButton" type="LinkButton" parent="BirdCharcterBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630031.htm#query=bird%20sprite&position=1&from_view=keyword&track=ais&uuid=af058af4-dd95-4119-bd2f-4fb9a325425a"
+uri = "https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630031.htm#query=bird%20sprite&position=1&from_view=keyword&track=ais&uuid=af058af4-dd95-4119-bd2f-4fb9a325425a"
+
+[node name="BirdCharacterAuthorBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 2019.0
+offset_right = 40.0
+offset_bottom = 2059.0
+
+[node name="BirdCharacterSpritesAuthorLabel" type="Label" parent="BirdCharacterAuthorBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Man Character Sprites: freepik"
+
+[node name="BirdCharacterSpritesObtainedFromBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_top = 2117.0
+offset_right = 40.0
+offset_bottom = 2157.0
+
+[node name="BirdCharacterSpritesObtainedFromLabelLabel" type="Label" parent="BirdCharacterSpritesObtainedFromBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "Bird Character Sprites from: "
+
+[node name="BirdCharacterObtainedFromLinkButton" type="LinkButton" parent="BirdCharacterSpritesObtainedFromBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1pfef")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com/"
+uri = "www.freepik.com/"
+
 [connection signal="pressed" from="SoundtrackObtainedFromBoxContainer/SoundtrackLink" to="." method="_on_soundtrack_link_pressed"]
 [connection signal="pressed" from="LevelSoundEffectObtainedFrom/LevelSoundEffectObtainedFrom" to="." method="_on_level_sound_effect_obtained_from_pressed"]
 [connection signal="pressed" from="StartCounterSoundEffectObtainedFromBoxContainer/StartCounterSoundEffectObtainedFromLinkButton" to="." method="_on_start_counter_sound_effect_obtained_from_link_button_pressed"]
 [connection signal="pressed" from="ManCharacterSpriteBoxContainer/ManCharacterSpriteLinkButton" to="." method="_on_link_button_pressed"]
 [connection signal="pressed" from="ManCharacterSpritesObtainedFrom/ManCharacterSpritesObtainedFromLinkButton" to="." method="_on_man_character_sprites_obtained_from_link_button_pressed"]
 [connection signal="pressed" from="PainSoundEffectObtainedFromBoxContainer/PainSoundEffectObtainedFromLinkButton" to="." method="_on_pain_sound_effect_obtained_from_link_button_pressed"]
+[connection signal="pressed" from="BirdCharcterBoxContainer/BirdCharacterSpritesLinkButton" to="." method="_on_link_button_pressed"]
+[connection signal="pressed" from="BirdCharacterSpritesObtainedFromBoxContainer/BirdCharacterObtainedFromLinkButton" to="." method="_on_bird_character_obtained_from_link_button_pressed"]
