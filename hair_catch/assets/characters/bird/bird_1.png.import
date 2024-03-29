@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5flly6fgbfgp"
-path="res://.godot/imported/bird wing up.png-1717bb09857a1e1a79ff3e9c83ff581b.ctex"
+uid="uid://dgdp0dtoqjosw"
+path="res://.godot/imported/bird_1.png-fb11ffe7c84230410341b3f4118de27f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/bird/bird wing up.png"
-dest_files=["res://.godot/imported/bird wing up.png-1717bb09857a1e1a79ff3e9c83ff581b.ctex"]
+source_file="res://assets/characters/bird/bird_1.png"
+dest_files=["res://.godot/imported/bird_1.png-fb11ffe7c84230410341b3f4118de27f.ctex"]
 
 [params]
 

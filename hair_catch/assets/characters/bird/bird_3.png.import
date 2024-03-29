@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tcgruhm66w6r"
-path="res://.godot/imported/flat wing swoop beak open.png-e49a21e713dfc0566a66ac52d6140a7f.ctex"
+uid="uid://gge60qpfplba"
+path="res://.godot/imported/bird_3.png-adc9fa1a4fb92f5a8576dda9ea4ff9a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/bird/flat wing swoop beak open.png"
-dest_files=["res://.godot/imported/flat wing swoop beak open.png-e49a21e713dfc0566a66ac52d6140a7f.ctex"]
+source_file="res://assets/characters/bird/bird_3.png"
+dest_files=["res://.godot/imported/bird_3.png-adc9fa1a4fb92f5a8576dda9ea4ff9a2.ctex"]
 
 [params]
 
