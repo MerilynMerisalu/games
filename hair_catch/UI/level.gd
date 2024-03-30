@@ -11,7 +11,7 @@ signal change_hair_count(hair_left: int);
 
 
 var level : int = 1;
-var hair_left : int = 10;
+var hair_left : int = 15;
 var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes = 0;
@@ -104,9 +104,9 @@ func _on_level_changed() -> void:
 		
 
 func _on_refresh_hair_label() -> void:
-	hair_left = 10;
+	hair_left = 15;
 	if (EventBus.is_level_passed == true):
-		hair_left += 5;
+		hair_left -= 5;
 		EventBus.hair_left_label_refresed.emit(hair_left);
 		
 func _on_refresh_game_timer_label() -> void:
