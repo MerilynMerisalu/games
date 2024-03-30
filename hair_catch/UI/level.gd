@@ -11,11 +11,12 @@ signal change_hair_count(hair_left: int);
 
 
 var level : int = 1;
+var initial_hair_left : int = 15;
 var hair_left : int = 15;
 var default_minutes :int = 1;
 var default_seconds : int = 31;
-var minutes = 0;
-var seconds = 0;
+var minutes : int = 0;
+var seconds : int = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_timer_label.modulate = Color.BLACK;
@@ -104,10 +105,9 @@ func _on_level_changed() -> void:
 		
 
 func _on_refresh_hair_label() -> void:
-	hair_left = 15;
 	if (EventBus.is_level_passed == true):
-		hair_left -= 5;
-		EventBus.hair_left_label_refresed.emit(hair_left);
+		initial_hair_left -= 5;
+		EventBus.hair_left_label_refresed.emit(initial_hair_left);
 		
 func _on_refresh_game_timer_label() -> void:
 	if(EventBus.is_level_passed == true):
