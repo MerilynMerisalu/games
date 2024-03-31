@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqnn7hakib3pp"]
+
+[ext_resource type="PackedScene" uid="uid://by5mvncxetk4n" path="res://Base/BaseCredits.tscn" id="1_nitqn"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="2_8aetu"]
+
+[node name="Credits2" instance=ExtResource("1_nitqn")]
+
+[node name="PainSoundEffectTitleBoxContainer" type="BoxContainer" parent="." index="2"]
+offset_left = 6.0
+offset_top = 172.0
+offset_right = 2152.0
+offset_bottom = 238.0
+
+[node name="PainSoundEffectTitleLabel" type="Label" parent="PainSoundEffectTitleBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8aetu")
+theme_override_font_sizes/font_size = 77
+text = "Title of the Pain Sound Effect: Male grunt, ouch, in pain 2"
+
+[node name="PainSoundEffectAuthorBoxContainer" type="BoxContainer" parent="." index="4"]
+offset_left = -1.0
+offset_top = 239.0
+offset_right = 1573.0
+offset_bottom = 305.0
+
+[node name="PainSoundEffectAuthorLabel" type="Label" parent="PainSoundEffectAuthorBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8aetu")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Pain Sound Effect: ZapSplat"
+
+[node name="PainSoundEffectObtainedFromBoxContainer" type="BoxContainer" parent="." index="5"]
+offset_left = -4.0
+offset_top = 325.0
+offset_right = 1634.0
+offset_bottom = 391.0
+
+[node name="PainSoundEffectObtainedFromLabel" type="Label" parent="PainSoundEffectObtainedFromBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8aetu")
+theme_override_font_sizes/font_size = 77
+text = "Pain Sound Effect From: "
+
+[node name="PainSoundEffectObtainedFromLinkButton" type="LinkButton" parent="PainSoundEffectObtainedFromBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8aetu")
+theme_override_font_sizes/font_size = 77
+text = "www.zapsplat.com"
+uri = "https://www.zapsplat.com/"
