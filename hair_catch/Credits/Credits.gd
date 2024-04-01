@@ -8,7 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if(Input.is_action_pressed("ui_down")):
+		get_tree().change_scene_to_file("res://Credits/Credits2.tscn");
 
 
 func _on_soundtrack_link_pressed() -> void:
@@ -37,3 +38,6 @@ func _on_link_button_pressed() -> void:
 
 func _on_bird_character_obtained_from_link_button_pressed() -> void:
 	OS.shell_open("https://www.freepik.com/");
+
+
+
