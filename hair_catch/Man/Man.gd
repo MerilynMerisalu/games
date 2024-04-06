@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-
 const POSITION_X_START_VALUE : int = 250;
 const CRY_IMG : Texture = preload("res://assets/characters/man/cry.png");
 var screen_size;

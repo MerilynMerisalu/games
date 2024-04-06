@@ -1,7 +1,6 @@
 class_name level_base extends BoxContainer
 
 
-
 signal change_hair_count(hair_left: int);
 
 @onready var game_timer_label : Label = get_node("../UI/TimerContainer/GameTimerLabel")

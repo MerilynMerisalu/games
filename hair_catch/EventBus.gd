@@ -9,9 +9,13 @@ signal game_timer_label_refresed(minutes : int, seconds : int);
 signal start_label_finished;
 
 const HAIR_LEFT : String = " Hair Left";
+
+
 var is_level_passed : bool = false;
 var score : int = 0;
 var is_start_label_finished : bool = false;
+var health : int = 30;
+var damage : int = 0;
 
 
 # Called when the node enters the scene tree for the first time.
