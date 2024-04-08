@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l4fxulcibp18"
-path="res://.godot/imported/heart_small.png-14506fed7142012999e79ae47c58355e.ctex"
+uid="uid://b8wxk1jlqn8ml"
+path="res://.godot/imported/red_lives – test6.png-79ad6eb706a635900760c0f3a1ccbfa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/heart/heart_small.png"
-dest_files=["res://.godot/imported/heart_small.png-14506fed7142012999e79ae47c58355e.ctex"]
+source_file="res://assets/images/Lives/red_lives – test6.png"
+dest_files=["res://.godot/imported/red_lives – test6.png-79ad6eb706a635900760c0f3a1ccbfa7.ctex"]
 
 [params]
 

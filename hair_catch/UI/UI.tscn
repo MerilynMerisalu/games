@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_467ea"]
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_u64rs"]
-[ext_resource type="Texture2D" uid="uid://l4fxulcibp18" path="res://assets/images/heart/heart_small.png" id="3_wo3bl"]
+[ext_resource type="Texture2D" uid="uid://b8wxk1jlqn8ml" path="res://assets/images/Lives/red_lives – test6.png" id="3_kkusq"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -83,18 +83,13 @@ theme_override_fonts/font = ExtResource("1_467ea")
 theme_override_font_sizes/font_size = 77
 text = "Hair left : 0"
 
-[node name="BoxContainer" type="BoxContainer" parent="."]
+[node name="LifeTextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -156.0
-offset_top = -254.0
-offset_right = 317.0
-offset_bottom = 100.0
-grow_vertical = 0
-alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="BoxContainer"]
-layout_mode = 2
-texture = ExtResource("3_wo3bl")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -521.0
+offset_top = 106.0
+offset_bottom = 193.0
+grow_horizontal = 0
+texture = ExtResource("3_kkusq")
