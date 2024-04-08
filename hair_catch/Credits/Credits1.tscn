@@ -1,0 +1,338 @@
+[gd_scene load_steps=4 format=3 uid="uid://cno6v8fehtguh"]
+
+[ext_resource type="PackedScene" uid="uid://by5mvncxetk4n" path="res://Base/BaseCredits.tscn" id="1_dtvie"]
+[ext_resource type="Script" path="res://Credits/Credits.gd" id="2_5mqm0"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="3_a6fev"]
+
+[node name="Credits1" instance=ExtResource("1_dtvie")]
+script = ExtResource("2_5mqm0")
+
+[node name="AuthorContainer" type="BoxContainer" parent="." index="3"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = 91.0
+offset_right = 32.0
+offset_bottom = 157.0
+grow_horizontal = 2
+
+[node name="AuthorLabel" type="Label" parent="AuthorContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "author of the game idea: Merilyn Merisalu"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HelpWithGraphicsBoxContainer" type="BoxContainer" parent="." index="4"]
+offset_top = 184.0
+offset_right = 1904.0
+offset_bottom = 250.0
+
+[node name="HelpWithGraphicsLabel" type="Label" parent="HelpWithGraphicsBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "help with graphics: Arturo Perales JR, Marian mõisa"
+
+[node name="MusicAndSoundsContainer" type="BoxContainer" parent="." index="5"]
+offset_left = -2.0
+offset_top = 264.0
+offset_right = 733.0
+offset_bottom = 343.0
+
+[node name="Music" type="Label" parent="MusicAndSoundsContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Music and sounds:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartAndCreditsMusic" type="BoxContainer" parent="." index="6"]
+offset_left = -10.0
+offset_top = 362.0
+offset_right = 1193.0
+offset_bottom = 428.0
+
+[node name="StartAndCreditsMusicLabel" type="Label" parent="StartAndCreditsMusic" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Start and credits scenes music: "
+
+[node name="SoundTrackTitleContainer" type="BoxContainer" parent="." index="7"]
+offset_left = -5.0
+offset_top = 438.0
+offset_right = 2316.0
+offset_bottom = 504.0
+alignment = 1
+
+[node name="SoundtrackTitleLabel" type="Label" parent="SoundTrackTitleContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Shadow Tag – sneaky cartoon music with bursts of liveliness"
+
+[node name="SoundtrackAuthorBoxContainer" type="BoxContainer" parent="." index="8"]
+offset_left = -2.0
+offset_top = 507.0
+offset_right = 1187.0
+offset_bottom = 573.0
+
+[node name="SoundTrackAuthorLabel" type="Label" parent="SoundtrackAuthorBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Author of the music: Audio hero"
+
+[node name="SoundtrackObtainedFromBoxContainer" type="BoxContainer" parent="." index="9"]
+offset_left = -10.0
+offset_top = 578.0
+offset_right = 1401.0
+offset_bottom = 644.0
+
+[node name="SoundTrackObtainedFromLabel" type="Label" parent="SoundtrackObtainedFromBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Soundtrack Music from: "
+
+[node name="SoundtrackLink" type="LinkButton" parent="SoundtrackObtainedFromBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Zapsplat.com"
+uri = "Zapsplat.com"
+
+[node name="LevelSoundEffectTitleBoxContainer" type="BoxContainer" parent="." index="10"]
+offset_left = -12.0
+offset_top = 666.0
+offset_right = 2728.0
+offset_bottom = 732.0
+alignment = 1
+
+[node name="LevelSoundEffectTitleLabel" type="Label" parent="LevelSoundEffectTitleBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Title of Level Sound Effect: Cartoon walk, descend and level out at end"
+
+[node name="LevelSoundEffectAuthorBoxContainer" type="BoxContainer" parent="." index="11"]
+offset_top = 730.0
+offset_right = 1646.0
+offset_bottom = 796.0
+
+[node name="LevelSoundEffectAuthorLabel" type="Label" parent="LevelSoundEffectAuthorBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Level Sound Effect: ZapSplat"
+
+[node name="LevelSoundEffectObtainedFrom" type="BoxContainer" parent="." index="12"]
+offset_top = 794.0
+offset_right = 1466.0
+offset_bottom = 860.0
+
+[node name="LevelSoundEffectObtainedFromLabel" type="Label" parent="LevelSoundEffectObtainedFrom" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Level Sound Effect from: "
+
+[node name="LevelSoundEffectObtainedFrom" type="LinkButton" parent="LevelSoundEffectObtainedFrom" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "zapsplat.com"
+uri = "https://www.zapsplat.com/"
+
+[node name="StartCounterSoundEffectBoxContainer" type="BoxContainer" parent="." index="13"]
+offset_left = 2.0
+offset_top = 873.0
+offset_right = 3106.0
+offset_bottom = 939.0
+
+[node name="StartCounterSoundEffectTitle" type="Label" parent="StartCounterSoundEffectBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Title of the Start Counter Sound Effect: Cartoon Character Counting To Three Fast"
+
+[node name="StartCounterSoundEffectAuthorBoxContainer" type="BoxContainer" parent="." index="14"]
+offset_left = -7.0
+offset_top = 961.0
+offset_right = 2211.0
+offset_bottom = 1027.0
+
+[node name="StartCounterSoundEffectAuthorLabel" type="Label" parent="StartCounterSoundEffectAuthorBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Start Counter Sound Effect: applehillstudios"
+
+[node name="StartCounterSoundEffectObtainedFromBoxContainer" type="BoxContainer" parent="." index="15"]
+offset_left = -5.0
+offset_top = 1063.0
+offset_right = 3999.0
+offset_bottom = 1129.0
+
+[node name="StartCounterSoundEffectObtainedFromLabel" type="Label" parent="StartCounterSoundEffectObtainedFromBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "start counter sound Effect from: "
+
+[node name="StartCounterSoundEffectObtainedFromLinkButton" type="LinkButton" parent="StartCounterSoundEffectObtainedFromBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "elements.envato.com/cartoon-character-counting-to-three-fast-2LM2SGJ"
+uri = "https://elements.envato.com/"
+
+[node name="BirdCharcterBoxContainer" type="BoxContainer" parent="." index="16"]
+offset_top = 1144.0
+offset_right = 8316.0
+offset_bottom = 1210.0
+
+[node name="BirdCharacterSpritesLabel" type="Label" parent="BirdCharcterBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Bird Character sprites: "
+
+[node name="BirdCharacterSpritesLinkButton" type="LinkButton" parent="BirdCharcterBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630031.htm#query=bird%20sprite&position=1&from_view=keyword&track=ais&uuid=af058af4-dd95-4119-bd2f-4fb9a325425a"
+uri = "https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630031.htm#query=bird%20sprite&position=1&from_view=keyword&track=ais&uuid=af058af4-dd95-4119-bd2f-4fb9a325425a"
+
+[node name="BirdCharacterAuthorBoxContainer" type="BoxContainer" parent="." index="17"]
+offset_top = 1235.0
+offset_right = 1667.0
+offset_bottom = 1301.0
+
+[node name="BirdCharacterSpritesAuthorLabel" type="Label" parent="BirdCharacterAuthorBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Man Character Sprites: freepik"
+
+[node name="BirdCharacterSpritesObtainedFromBoxContainer" type="BoxContainer" parent="." index="18"]
+offset_left = -13.0
+offset_top = 1309.0
+offset_right = 1738.0
+offset_bottom = 1375.0
+
+[node name="BirdCharacterSpritesObtainedFromLabelLabel" type="Label" parent="BirdCharacterSpritesObtainedFromBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Bird Character Sprites from: "
+
+[node name="BirdCharacterObtainedFromLinkButton" type="LinkButton" parent="BirdCharacterSpritesObtainedFromBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com"
+uri = "www.freepik.com"
+
+[node name="ManCharacterSpriteBoxContainer" type="BoxContainer" parent="." index="19"]
+offset_top = 1413.0
+offset_right = 7353.0
+offset_bottom = 1479.0
+alignment = 1
+
+[node name="ManCharacterSpriteLabel" type="Label" parent="ManCharacterSpriteBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Man Character Sprites: "
+
+[node name="ManCharacterSpriteLinkButton" type="LinkButton" parent="ManCharacterSpriteBoxContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com/premium-vector/vector-cartoon-illustration-cute-bald-man-set_24672475.htm?fbclid=IwAR0kJuoOU-scGF8ack_c4GO_RwOVe-KJXZmaMnuAkOh_05l9GuTqfTCZwUg"
+uri = "https://www.freepik.com/premium-vector/vector-cartoon-illustration-cute-bald-man-set_24672475.htm?fbclid=IwAR0kJuoOU-scGF8ack_c4GO_RwOVe-KJXZmaMnuAkOh_05l9GuTqfTCZwUg"
+
+[node name="ManCharacterSpritesAuthorBoxContainer" type="BoxContainer" parent="." index="20"]
+offset_top = 1524.0
+offset_right = 1923.0
+offset_bottom = 1590.0
+
+[node name="ManCharacterSpritesAuthorLabel" type="Label" parent="ManCharacterSpritesAuthorBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Author of the Man Character Sprites: killustrations"
+
+[node name="ManCharacterSpritesObtainedFrom" type="BoxContainer" parent="." index="21"]
+offset_left = -5.0
+offset_top = 1638.0
+offset_right = 1725.0
+offset_bottom = 1704.0
+
+[node name="ManCharacterSpritesObtainedFromLabel" type="Label" parent="ManCharacterSpritesObtainedFrom" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "Man Character Sprites from: "
+
+[node name="ManCharacterSpritesObtainedFromLinkButton" type="LinkButton" parent="ManCharacterSpritesObtainedFrom" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6fev")
+theme_override_font_sizes/font_size = 77
+text = "www.freepik.com"
+uri = "https://www.freepik.com/"

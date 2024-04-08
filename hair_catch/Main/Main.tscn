@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtknlojqi1gex"]
+
+[ext_resource type="Script" path="res://Main/Main.gd" id="1_a1jmq"]
+[ext_resource type="PackedScene" uid="uid://04qiebq6u6dt" path="res://UI/UI.tscn" id="2_0u2tk"]
+[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Bird/bird.tscn" id="4_r7061"]
+[ext_resource type="PackedScene" uid="uid://dt03dccxhppqn" path="res://UI/level.tscn" id="5_ug5oi"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_a1jmq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bird" parent="." instance=ExtResource("4_r7061")]
+position = Vector2(193, 429)
+
+[node name="LevelContainer" parent="." instance=ExtResource("5_ug5oi")]
+
+[node name="Men" type="Node" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("2_0u2tk")]
+
+[node name="CreateManTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]

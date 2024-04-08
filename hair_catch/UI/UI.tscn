@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://04qiebq6u6dt"]
+
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_467ea"]
+[ext_resource type="Script" path="res://UI/UI.gd" id="1_u64rs"]
+[ext_resource type="Texture2D" uid="uid://b8wxk1jlqn8ml" path="res://assets/images/Lives/red_lives – test6.png" id="3_kkusq"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u64rs")
+
+[node name="TimerContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 106.0
+
+[node name="GameTimerLabel" type="Label" parent="TimerContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+text = "00:00"
+
+[node name="ScoreContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 106.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ScoreContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+text = "0"
+
+[node name="LinkContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -373.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="LinkButton" type="LinkButton" parent="LinkContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+action_mode = 0
+text = "Sound from Zapsplat.com"
+underline = 1
+uri = "Zapsplat.com"
+
+[node name="HairContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -418.0
+offset_bottom = 66.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="HairLeftLabel" type="Label" parent="HairContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_467ea")
+theme_override_font_sizes/font_size = 77
+text = "Hair left : 0"
+
+[node name="LifeTextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -521.0
+offset_top = 106.0
+offset_bottom = 193.0
+grow_horizontal = 0
+texture = ExtResource("3_kkusq")
