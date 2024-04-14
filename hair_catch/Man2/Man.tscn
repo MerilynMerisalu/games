@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2e3bihaelncw"]
+
+[ext_resource type="Script" path="res://Man2/Man.gd" id="1_4l3u6"]
+[ext_resource type="Texture2D" uid="uid://1iwx05gfq0lj" path="res://assets/characters/man/calm.png" id="1_wpxs7"]
+
+[node name="Man" type="Area2D"]
+script = ExtResource("1_4l3u6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(823, 273)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wpxs7")
