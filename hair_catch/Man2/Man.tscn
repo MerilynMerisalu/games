@@ -13,7 +13,7 @@ var screen_size : Vector2;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = Screen.screen_size;
-	position.x = randf_range(0, screen_size.x - Screen.SCREEN_CONSTRAINT);
+	position.x = randf_range(Screen.SCREEN_CONSTRAINT, screen_size.x - Screen.SCREEN_CONSTRAINT);
 	position.y = screen_size.y;
 
 
