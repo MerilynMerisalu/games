@@ -1,12 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3rrc480m8tt2"]
+[gd_scene load_steps=3 format=3 uid="uid://crwvcwbngj81r"]
 
-[ext_resource type="Texture2D" uid="uid://dy307hm4vcmfe" path="res://assets/characters/man/evil.png" id="1_ax1h2"]
+[ext_resource type="Texture2D" uid="uid://dy307hm4vcmfe" path="res://assets/characters/man/evil.png" id="1_nw5pv"]
 
-[node name="Man" type="Node"]
+[sub_resource type="GDScript" id="GDScript_yimwu"]
+script/source = "extends Area2D
 
-[node name="Man" type="Area2D" parent="."]
-position = Vector2(350, 862)
+@onready var visibility_timer : Timer = get_node(\"VisibilityTimer\");
+var is_man_visible : bool = false;
+var screen_size : Vector2;
 
-[node name="Sprite2D" type="Sprite2D" parent="Man"]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	screen_size = Screen.screen_size;
+	position.x = randf_range(0, screen_size.x - Screen.SCREEN_CONSTRAINT);
+	position.y = screen_size.y;
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if is_man_visible == false:
+		position.y -= 180;
+		visibility_timer.start();
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	is_man_visible = true;
+
+
+func _on_visible_on_screen_notifier_2d_2_screen_exited() -> void:
+		queue_free();
+		is_man_visible = false;
+
+
+func _on_visibility_timer_timeout() -> void:
+	position.y += 180;
+"
+
+[node name="Man" type="Area2D"]
+script = SubResource("GDScript_yimwu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ax1h2")
+texture = ExtResource("1_nw5pv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(212, -268)
+polygon = PackedVector2Array(-56, 32, -94, 78, -182, 72, -194, 128)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(202, -241.658)
+scale = Vector2(1, 0.671667)
+rect = Rect2(-180, 85, 80, 55)
+
+[node name="VisibilityTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(36, 166)
+rect = Rect2(-10, -10, 50, 59)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="timeout" from="VisibilityTimer" to="." method="_on_visibility_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D2" to="." method="_on_visible_on_screen_notifier_2d_2_screen_exited"]
