@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dt03dccxhppqn"]
 
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_7cklf"]
-[ext_resource type="Script" path="res://UI/Level.gd" id="1_r0kyd"]
+[ext_resource type="Script" path="res://Base/BaseLevel.gd" id="1_r0kyd"]
 [ext_resource type="AudioStream" uid="uid://dd15aydkiawo6" path="res://assets/audio/bird.wav" id="2_fugjo"]
 [ext_resource type="AudioStream" uid="uid://b51db2jppm7t5" path="res://assets/audio/Level music.mp3" id="3_jidwq"]
 [ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/StartTimer.tscn" id="5_2m8by"]

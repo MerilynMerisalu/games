@@ -1,5 +1,6 @@
 extends Node
 
+
 const MAN_SCENE : PackedScene = preload("res://Man/Man.tscn");
 @onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
 @onready var timer : Timer = $CreateManTimer
