@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtknlojqi1gex"]
+
+[ext_resource type="Script" path="res://Base/BaseLevel.gd" id="1_ec6sf"]
+[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Bird/Bird.tscn" id="2_04f32"]
+[ext_resource type="PackedScene" uid="uid://dt03dccxhppqn" path="res://Base/BaseUI.tscn" id="3_1ux1h"]
+[ext_resource type="PackedScene" uid="uid://04qiebq6u6dt" path="res://UI/UI.tscn" id="4_205ok"]
+
+[node name="BaseLevel" type="Node"]
+script = ExtResource("1_ec6sf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bird" parent="." instance=ExtResource("2_04f32")]
+position = Vector2(193, 429)
+
+[node name="LevelContainer" parent="." instance=ExtResource("3_1ux1h")]
+
+[node name="UI" parent="." instance=ExtResource("4_205ok")]

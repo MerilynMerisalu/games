@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmlo6rotpainc"]
+
+[ext_resource type="PackedScene" uid="uid://dtknlojqi1gex" path="res://Base/BaseLevel.tscn" id="1_m2e5b"]
+[ext_resource type="Script" path="res://Level/Level_1.gd" id="2_dxrr0"]
+
+[node name="Level_1" instance=ExtResource("1_m2e5b")]
+script = ExtResource("2_dxrr0")
+
+[node name="Men" type="Node" parent="." index="4"]
+
+[node name="CreateManTimer" type="Timer" parent="." index="5"]
