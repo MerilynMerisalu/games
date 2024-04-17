@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dt03dccxhppqn"]
 
-[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="1_7cklf"]
-[ext_resource type="Script" path="res://Base/BaseLevel.gd" id="1_r0kyd"]
-[ext_resource type="AudioStream" uid="uid://dd15aydkiawo6" path="res://assets/audio/bird.wav" id="2_fugjo"]
-[ext_resource type="AudioStream" uid="uid://b51db2jppm7t5" path="res://assets/audio/Level music.mp3" id="3_jidwq"]
-[ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/StartTimer.tscn" id="5_2m8by"]
-[ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="6_s7c33"]
+[ext_resource type="Script" path="res://Base/BaseUI.gd" id="1_fwu0k"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="2_ogrpx"]
+[ext_resource type="AudioStream" uid="uid://dd15aydkiawo6" path="res://assets/audio/bird.wav" id="3_33kr0"]
+[ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/StartTimer.tscn" id="4_sg3mo"]
+[ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="5_waqji"]
+[ext_resource type="AudioStream" uid="uid://b51db2jppm7t5" path="res://assets/audio/Level music.mp3" id="6_65exj"]
 
 [node name="LevelContainer" type="BoxContainer"]
 anchors_preset = 8
@@ -20,14 +20,14 @@ offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-script = ExtResource("1_r0kyd")
+script = ExtResource("1_fwu0k")
 
 [node name="Level" type="Label" parent="."]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_7cklf")
+theme_override_fonts/font = ExtResource("2_ogrpx")
 theme_override_font_sizes/font_size = 77
 text = "
 "
@@ -40,20 +40,19 @@ one_shot = true
 autostart = true
 
 [node name="Counting" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_fugjo")
+stream = ExtResource("3_33kr0")
 
-[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_jidwq")
-autoplay = true
-
-[node name="StartTimerContainer" parent="." instance=ExtResource("5_2m8by")]
+[node name="StartTimerContainer" parent="." instance=ExtResource("4_sg3mo")]
 layout_mode = 2
 
 [node name="GameTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="Ticking" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_s7c33")
+stream = ExtResource("5_waqji")
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_65exj")
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="label_hidden" from="StartTimerContainer" to="." method="_on_start_timer_container_label_hidden"]

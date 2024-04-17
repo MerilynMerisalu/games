@@ -1,4 +1,4 @@
-class_name level_base extends BoxContainer
+class_name base_ui extends BoxContainer
 
 
 signal change_hair_count(hair_left: int);
