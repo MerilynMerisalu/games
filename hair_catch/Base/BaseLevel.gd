@@ -1,15 +1,13 @@
-extends Node
-
-
+class_name BaseLevel extends Node
 
 @onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
-
+var score : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$LevelContainer/StartTimerContainer/StartLabel.visible = false;
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
-	
+	score = EventBus.score;
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
