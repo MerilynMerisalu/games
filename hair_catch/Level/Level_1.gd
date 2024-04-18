@@ -2,7 +2,7 @@ extends Node
 
 const MAN_SCENE : PackedScene = preload("res://Man/Man.tscn");
 var is_creating_men : bool = true;
-
+@onready var timer : Timer = $CreateManTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

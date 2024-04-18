@@ -16,6 +16,8 @@ var default_minutes :int = 1;
 var default_seconds : int = 31;
 var minutes : int = 0;
 var seconds : int = 0;
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_timer_label.modulate = Color.BLACK;
@@ -26,6 +28,7 @@ func _ready() -> void:
 	EventBus.connect("hair_caught", _on_hair_caught);
 	EventBus.connect("level_up", _on_level_changed);
 	$StartTimerContainer/StartLabel.visible = false;
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

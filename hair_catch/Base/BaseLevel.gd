@@ -3,7 +3,7 @@ extends Node
 
 
 @onready var start_label : Label = get_node("LevelContainer/StartTimerContainer/StartLabel")
-@onready var timer : Timer = $CreateManTimer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +19,9 @@ func _process(_delta):
 
 func _on_link_button_pressed() -> void:
 	OS.shell_open("https://www.zapsplat.com/");
-	
+
+
+
 
 
 	
