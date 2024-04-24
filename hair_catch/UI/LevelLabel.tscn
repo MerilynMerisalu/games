@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt03dccxhppqn"]
+
+[ext_resource type="Script" path="res://UI/LevelLabel.gd" id="1_xo5tq"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="2_xwocd"]
+[ext_resource type="AudioStream" uid="uid://dd15aydkiawo6" path="res://assets/audio/bird.wav" id="3_xpe8f"]
+[ext_resource type="AudioStream" uid="uid://b51db2jppm7t5" path="res://assets/audio/Level music.mp3" id="4_cmcd4"]
+[ext_resource type="PackedScene" uid="uid://wc1ve4bxmv68" path="res://UI/StartTimer.tscn" id="5_oj1m0"]
+[ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="6_kmbsl"]
+
+[node name="LevelContainer" type="BoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -33.0
+offset_right = 162.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_xo5tq")
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xwocd")
+theme_override_font_sizes/font_size = 77
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Counting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xpe8f")
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cmcd4")
+autoplay = true
+
+[node name="StartTimerContainer" parent="." instance=ExtResource("5_oj1m0")]
+layout_mode = 2
+
+[node name="Ticking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kmbsl")
+
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="label_hidden" from="StartTimerContainer" to="." method="_on_start_timer_container_label_hidden"]

@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmlo6rotpainc"]
+[gd_scene load_steps=3 format=3 uid="uid://b65muq1sooucv"]
 
-[ext_resource type="PackedScene" uid="uid://dtknlojqi1gex" path="res://Base/BaseLevel.tscn" id="1_m2e5b"]
-[ext_resource type="Script" path="res://Level/Level_1.gd" id="2_dxrr0"]
+[ext_resource type="PackedScene" uid="uid://cq2u6giaf4wwn" path="res://Base/BaseLevel.tscn" id="1_xifac"]
+[ext_resource type="Script" path="res://assets/characters/level/Level_1.gd" id="2_r3nvn"]
 
-[node name="Level_1" instance=ExtResource("1_m2e5b")]
-script = ExtResource("2_dxrr0")
-
-[node name="Men" type="Node" parent="." index="4"]
-
-[node name="CreateManTimer" type="Timer" parent="." index="5"]
+[node name="Level1" instance=ExtResource("1_xifac")]
+script = ExtResource("2_r3nvn")

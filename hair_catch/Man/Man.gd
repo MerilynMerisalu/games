@@ -27,3 +27,4 @@ func _on_body_entered(body: Node) -> void:
 		is_collided = true;
 
 
+

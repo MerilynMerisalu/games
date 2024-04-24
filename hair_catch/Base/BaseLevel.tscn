@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtknlojqi1gex"]
+[gd_scene load_steps=5 format=3 uid="uid://cq2u6giaf4wwn"]
 
-[ext_resource type="Script" path="res://Base/BaseLevel.gd" id="1_ec6sf"]
-[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Bird/Bird.tscn" id="2_04f32"]
-[ext_resource type="PackedScene" uid="uid://dt03dccxhppqn" path="res://Base/BaseUI.tscn" id="3_1ux1h"]
-[ext_resource type="PackedScene" uid="uid://04qiebq6u6dt" path="res://UI/UI.tscn" id="4_205ok"]
+[ext_resource type="Script" path="res://Base/BaseLevel.gd" id="1_3gxur"]
+[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Bird/bird.tscn" id="1_46x87"]
+[ext_resource type="PackedScene" uid="uid://dt03dccxhppqn" path="res://UI/LevelLabel.tscn" id="2_87qxt"]
+[ext_resource type="PackedScene" uid="uid://by46dgits188s" path="res://Base/BaseUI.tscn" id="4_5useh"]
 
 [node name="BaseLevel" type="Node"]
-script = ExtResource("1_ec6sf")
+script = ExtResource("1_3gxur")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -16,9 +16,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Bird" parent="." instance=ExtResource("2_04f32")]
+[node name="Bird" parent="." instance=ExtResource("1_46x87")]
 position = Vector2(193, 429)
 
-[node name="LevelContainer" parent="." instance=ExtResource("3_1ux1h")]
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
 
-[node name="UI" parent="." instance=ExtResource("4_205ok")]
+[node name="LevelContainer" parent="." instance=ExtResource("2_87qxt")]
+
+[node name="BaseUi" parent="." instance=ExtResource("4_5useh")]
+
+[node name="Men" type="Node" parent="."]
+
+[node name="CreateManTimer" type="Timer" parent="."]
