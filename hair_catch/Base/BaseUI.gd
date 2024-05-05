@@ -43,18 +43,18 @@ func _on_refresh_game_timer_label() -> void:
 	
 	_reset_timer();
 	game_timer_label.text = str(default_minutes) \
-	+ ":" + str(default_seconds);
+		+ ":" + str(default_seconds);
 	
 	
 	
 func _reset_timer() -> void:
-	minutes = default_minutes
+	minutes = default_minutes;
 	seconds = default_seconds;
 
 
 func on_hair_left_changed(hair_left: int) -> void:
 		hair_left_label.text = str(hair_left) \
-		+ EventBus.HAIR_LEFT;
+			+ EventBus.HAIR_LEFT;
 		
 
 func _on_game_timer_timeout() -> void:
@@ -65,12 +65,15 @@ func _on_game_timer_timeout() -> void:
 	else:
 		seconds -= 1;
 	if(minutes == 0 and seconds <= 10):
-		$"GameTimerBoxContainer/GameTimerLabel".add_theme_color_override("font_color", Color.RED);
+		$"GameTimerBoxContainer/GameTimerLabel"\
+			.add_theme_color_override("font_color"
+			, Color.RED);
 		ticking.play();
 	if(minutes == 0 and seconds == 0):
 		game_timer.stop();
 		ticking.stop();
-	game_timer_label.text = str(minutes) + ":" + str(seconds);
+	game_timer_label.text = str(minutes) + ":" \
+		+ str(seconds);
 
 
 func _on_hair_caught():
@@ -78,7 +81,8 @@ func _on_hair_caught():
 		hair_left -= 1;
 		EventBus.score += 5;
 		hair_left_label.text = str(hair_left) + EventBus.HAIR_LEFT;
-		$"ScoreBoxContainer/ScoreLabel".text = str(EventBus.score);
+		$"ScoreBoxContainer/ScoreLabel"\
+			.text = str(EventBus.score);
 	else:
 		EventBus.is_level_passed = true;
 		EventBus.level_up.emit();
@@ -91,14 +95,17 @@ func _on_refresh_hair_label() -> void:
 	if (EventBus.is_level_passed == true):
 		initial_hair_left -= 5;
 		$"HairLeftBoxContainer/HairLeftLabel"\
-		.text = str(initial_hair_left) + EventBus.HAIR_LEFT; 
+		.text = str(initial_hair_left) +\
+		 	EventBus.HAIR_LEFT; 
 	else:
 		$"HairLeftBoxContainer/HairLeftLabel"\
-		.text = str(initial_hair_left) + EventBus.HAIR_LEFT; 
+		.text = str(initial_hair_left) + \
+			EventBus.HAIR_LEFT; 
 
 
 func _on_refresh_score_label() -> void:
-	$"ScoreBoxContainer/ScoreLabel".text = str(EventBus.score);
+	$"ScoreBoxContainer/ScoreLabel"\
+	.text = str(EventBus.score);
 		
 
 
