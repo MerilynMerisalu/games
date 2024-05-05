@@ -77,7 +77,7 @@ func _on_game_timer_timeout() -> void:
 
 
 func _on_hair_caught():
-	if hair_left > 0:
+	if hair_left > 1:
 		hair_left -= 1;
 		EventBus.score += 5;
 		hair_left_label.text = str(hair_left) \
