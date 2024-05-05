@@ -21,7 +21,7 @@ func _ready() -> void:
 	_on_refresh_game_timer_label();
 	_on_refresh_score_label();
 	_on_refresh_hair_label();
-	EventBus.start_label_finished.connect(_on_game_timer_timeout)
+	EventBus.start_label_finished.connect(_on_game_timer_timeout);
 	EventBus.hair_caught.connect(_on_hair_caught);
 	
 
