@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbk74678pp3ar"]
+
+[ext_resource type="Texture2D" uid="uid://1iwx05gfq0lj" path="res://assets/characters/man/calm.png" id="1_nry83"]
+[ext_resource type="Script" path="res://Characters/Man/Man.gd" id="1_yyhks"]
+[ext_resource type="AudioStream" uid="uid://b388t4iuolyun" path="res://assets/audio/pain.mp3" id="3_wiaqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3vqf"]
+size = Vector2(96, 142)
+
+[node name="Man" type="RigidBody2D"]
+position = Vector2(654, 40)
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_yyhks")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_nry83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-62, 86)
+shape = SubResource("RectangleShape2D_f3vqf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(52.3077, -116)
+scale = Vector2(0.861538, 1)
+rect = Rect2(-200, 150, 130, 130)
+
+[node name="Pain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wiaqy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

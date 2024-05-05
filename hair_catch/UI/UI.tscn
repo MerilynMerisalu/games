@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://04qiebq6u6dt"]
+
+[ext_resource type="PackedScene" uid="uid://dpro5dfcnb82p" path="res://Base/BaseUI.tscn" id="1_a8y65"]
+[ext_resource type="Texture2D" uid="uid://b8wxk1jlqn8ml" path="res://assets/images/Lives/red_lives – test6.png" id="3_kkusq"]
+
+[node name="UI" instance=ExtResource("1_a8y65")]
+
+[node name="LivesTextureRect" type="TextureRect" parent="." index="3"]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 102.0
+offset_right = 1575.0
+offset_bottom = 189.0
+texture = ExtResource("3_kkusq")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpro5dfcnb82p"]
+
+[ext_resource type="Script" path="res://Base/BaseUI.gd" id="1_41eex"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="2_2g1pt"]
+
+[node name="BaseUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_41eex")
+
+[node name="GameTimerBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameTimerLabel" type="Label" parent="GameTimerBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2g1pt")
+theme_override_font_sizes/font_size = 77
+text = "00:00"
+
+[node name="ScoreBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="ScoreLabel" type="Label" parent="ScoreBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2g1pt")
+theme_override_font_sizes/font_size = 77
+text = "0"
+
+[node name="HairLeftBoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="HairLeftLabel" type="Label" parent="HairLeftBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2g1pt")
+theme_override_font_sizes/font_size = 77
+text = "0 HAIR LEFT"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlxosbil0cn62"]
+
+[ext_resource type="Script" path="res://Characters/Man 2/Man.gd" id="1_qd4dt"]
+
+[node name="Man" type="Area2D"]
+position = Vector2(-68, 134)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qd4dt")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(847, -418)
+rect = Rect2(-10, -10, 180, 130)
+
+[node name="VisibilityTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(956, -588)
+polygon = PackedVector2Array(42, 182, 6, 220, -64, 206, -100, 256)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
