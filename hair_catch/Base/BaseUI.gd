@@ -77,10 +77,11 @@ func _on_game_timer_timeout() -> void:
 
 
 func _on_hair_caught():
-	if hair_left >= 1:
+	if hair_left > 1:
 		hair_left -= 1;
 		EventBus.score += 5;
-		hair_left_label.text = str(hair_left) + EventBus.HAIR_LEFT;
+		hair_left_label.text = str(hair_left) \
+			+ EventBus.HAIR_LEFT;
 		$"ScoreBoxContainer/ScoreLabel"\
 			.text = str(EventBus.score);
 	else:
@@ -98,14 +99,13 @@ func _on_refresh_hair_label() -> void:
 			.text = str(initial_hair_left) +\
 		 		EventBus.HAIR_LEFT; 
 	else:
-		$"HairLeftBoxContainer/HairLeftLabel"\
-			.text = str(initial_hair_left) + \
+		$"HairLeftBoxContainer/HairLeftLabel".text = str(initial_hair_left) + \
 				EventBus.HAIR_LEFT; 
 
 
 func _on_refresh_score_label() -> void:
 	$"ScoreBoxContainer/ScoreLabel"\
-	.text = str(EventBus.score);
+		.text = str(EventBus.score);
 		
 
 
