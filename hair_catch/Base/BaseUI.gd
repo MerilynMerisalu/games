@@ -18,14 +18,14 @@ var hair_left : int = 15;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#_reset_timer();
 	_on_refresh_game_timer_label()
 	_on_refresh_score_label();
 	_on_refresh_hair_label()
 	EventBus.start_label_finished.connect(_on_game_timer_timeout)
 	EventBus.hair_caught.connect(_on_hair_caught);
-	#EventBus.level_up.connect(_on_refresh_game_timer_label)
 	
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -41,14 +41,15 @@ func _on_refresh_game_timer_label() -> void:
 		else :
 			default_seconds -= 10;
 	
-	_reset_timer()
-	game_timer_label.text = str(default_minutes) + ":" + str(default_seconds);
+	_reset_timer();
+	game_timer_label.text = str(default_minutes) \
+	+ ":" + str(default_seconds);
 	
 	
 	
 func _reset_timer() -> void:
 	minutes = default_minutes
-	seconds = default_seconds
+	seconds = default_seconds;
 
 
 func on_hair_left_changed(hair_left: int) -> void:
@@ -85,10 +86,7 @@ func _on_hair_caught():
 		_on_refresh_hair_label();
 		
 		
-		
-
-
-		
+	
 func _on_refresh_hair_label() -> void:
 	if (EventBus.is_level_passed == true):
 		initial_hair_left -= 5;
