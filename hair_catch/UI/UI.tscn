@@ -5,7 +5,7 @@
 
 [node name="UI" instance=ExtResource("1_a8y65")]
 
-[node name="LifeTextureRect" type="TextureRect" parent="." index="3"]
+[node name="LifeTextureRect" type="TextureProgressBar" parent="." index="3"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -14,4 +14,4 @@ offset_left = -521.0
 offset_top = 86.0
 offset_bottom = 173.0
 grow_horizontal = 0
-texture = ExtResource("3_kkusq")
+texture_under = ExtResource("3_kkusq")
