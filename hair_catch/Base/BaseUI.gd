@@ -52,7 +52,7 @@ func _reset_timer() -> void:
 	seconds = default_seconds;
 
 
-func on_hair_left_changed(hair_left: int) -> void:
+func on_hair_left_changed(_hair_left: int) -> void:
 		hair_left_label.text = str(hair_left) \
 			+ EventBus.HAIR_LEFT;
 		
@@ -85,6 +85,9 @@ func _on_hair_caught():
 		$"ScoreBoxContainer/ScoreLabel"\
 			.text = str(EventBus.score);
 	else:
+		EventBus.score += 5;
+		$"ScoreBoxContainer/ScoreLabel"\
+			.text = str(EventBus.score);
 		EventBus.is_level_passed = true;
 		EventBus.level_up.emit();
 		game_timer.stop();
