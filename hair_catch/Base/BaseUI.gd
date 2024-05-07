@@ -2,12 +2,14 @@ class_name base_ui extends Control
 
 
 
-var default_minutes :int = 1;
-var default_seconds : int = 30;
 var minutes : int = 0;
 var seconds : int = 0;
-var initial_hair_left : int = 15;
+var default_minutes :int = 1;
+var default_seconds : int = 30;
 var hair_left : int = 15;
+var initial_hair_left : int = 15;
+
+
 
 @onready var game_timer_label : Label = get_node("GameTimerBoxContainer/GameTimerLabel")
 @onready var hair_left_label : Label = get_node("HairLeftBoxContainer/HairLeftLabel");
@@ -70,8 +72,10 @@ func _on_game_timer_timeout() -> void:
 			, Color.RED);
 		ticking.play();
 	if(minutes == 0 and seconds == 0):
+		emit_game_over();
 		game_timer.stop();
 		ticking.stop();
+		
 	game_timer_label.text = str(minutes) + ":" \
 		+ str(seconds);
 
@@ -109,6 +113,13 @@ func _on_refresh_hair_label() -> void:
 func _on_refresh_score_label() -> void:
 	$"ScoreBoxContainer/ScoreLabel"\
 		.text = str(EventBus.score);
+
+func emit_game_over() -> void:
+	if game_timer.is_stopped() == true:
+		if (minutes == 0 and seconds == 0) \
+			and hair_left > 0:
+				EventBus.lose.emit();
+
 		
 
 

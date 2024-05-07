@@ -6,14 +6,13 @@ var is_creating_men : bool = true;
 func _ready() -> void:
 	EventBus.level_up.connect(_on_stop_create_man );
 	EventBus.start_label_finished.connect(_on_create_man_timer_timeout);
-	EventBus.level_up.connect(_on_change_level )
-	
+	EventBus.level_up.connect(_on_change_level );
 	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	pass;
 
 
 func _on_create_man_timer_timeout() -> void:
@@ -27,4 +26,5 @@ func _on_stop_create_man() -> void:
 
 func _on_change_level() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://Level/level_2.tscn" )
+
 
