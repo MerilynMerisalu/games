@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://by5mvncxetk4n"]
+[gd_scene load_steps=4 format=3 uid="uid://by5mvncxetk4n"]
 
+[ext_resource type="Script" path="res://Base/BaseCredits.gd" id="1_g284r"]
 [ext_resource type="AudioStream" uid="uid://7r78hagnlwts" path="res://assets/audio/Credits.mp3" id="1_hhav4"]
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="2_uxuhh"]
 
 [node name="BaseCredits" type="Node"]
+script = ExtResource("1_g284r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -37,3 +39,35 @@ text = "CREDITS:"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="BackToStartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -80.0
+offset_right = 306.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uxuhh")
+theme_override_font_sizes/font_size = 77
+text = "Back to Start"
+flat = true
+
+[connection signal="pressed" from="BackToStartButton" to="." method="_on_back_to_start_button_pressed"]
