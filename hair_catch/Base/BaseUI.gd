@@ -119,6 +119,9 @@ func emit_game_over() -> void:
 		if (minutes == 0 and seconds == 0) \
 			and hair_left > 0:
 				EventBus.lose.emit();
+				
+				
+				
 
 		
 
