@@ -23,7 +23,7 @@ var is_start_label_finished : bool = false;
 var health : int = 30;
 var damage : int = 0;
 var level : int = 1;
-
+var reset_values : bool = false;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,7 +39,9 @@ func _process(_delta: float) -> void:
 func game_over() -> void:
 	get_tree().change_scene_to_file("res://Loss/Loss.tscn");
 	
-	
+		
+
+
 
 
 

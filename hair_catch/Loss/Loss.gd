@@ -13,8 +13,12 @@ func _process(_delta: float) -> void:
 
 
 func _on_replay_button_pressed() -> void:
-	
-	get_tree().change_scene_to_file("res://Level/Level_1.tscn");
+		reset_value();
+		get_tree().\
+		change_scene_to_file("res://Level/Level_1.tscn");
 
 
+func reset_value() -> void:
+	EventBus.score = 0;
+	EventBus.level = 1;
 

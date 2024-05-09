@@ -67,6 +67,7 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_uxuhh")
 theme_override_font_sizes/font_size = 77
+action_mode = 0
 text = "Back to Start"
 flat = true
 

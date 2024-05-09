@@ -1,15 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlxosbil0cn62"]
+[gd_scene load_steps=3 format=3 uid="uid://dlxosbil0cn62"]
 
-[ext_resource type="Script" path="res://Characters/Man 2/Man.gd" id="1_qd4dt"]
+[ext_resource type="Script" path="res://Characters/Man2/Man.gd" id="1_2q841"]
+[ext_resource type="Texture2D" uid="uid://bobcchfllnj5a" path="res://assets/characters/man/evil.png" id="2_r3n4m"]
 
 [node name="Man" type="Area2D"]
 position = Vector2(-68, 134)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_qd4dt")
+script = ExtResource("1_2q841")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r3n4m")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(847, -418)

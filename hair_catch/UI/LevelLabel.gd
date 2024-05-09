@@ -35,6 +35,7 @@ func _on_display_level_changed() -> void:
 	$Level.text = "Level " + str(EventBus.level);
 	$LevelTimer.start();
 	
+	
 
 func _on_level_changed() -> void:
 		EventBus.level += 1;
