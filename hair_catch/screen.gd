@@ -2,11 +2,13 @@ extends Node
 
 var screen_size: Vector2;
 var window_mode;
+var play_area_size;
 const SCREEN_CONSTRAINT : float = 55.0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size;
 	window_mode = get_window().mode;
+	play_area_size = get_viewport().get_visible_rect().size;
 	
 
 

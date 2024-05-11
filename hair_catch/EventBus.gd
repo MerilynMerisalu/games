@@ -16,7 +16,7 @@ signal lose;
 
 const HAIR_LEFT : String = " Hair Left";
 
-
+var is_creating_men : bool = true;
 var is_level_passed : bool = false;
 var score : int = 0;
 var is_start_label_finished : bool = false;

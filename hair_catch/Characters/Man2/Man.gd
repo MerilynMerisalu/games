@@ -1,31 +1,24 @@
 extends Area2D
 
-@onready var visibity_timer : Timer = get_node("VisibilityTimer")
-var screen_size;
-
+const DECRASED_BY : int = 530
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = Screen.screen_size;
-	position.x = randi_range(0, screen_size.x)
-	position.y = screen_size.y + 77;
+	position.x = randf_range(0, Screen.screen_size.y);
+	position.y = Screen.screen_size.y;
 	
-	
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
- 
-	if(visibity_timer.is_stopped() == false):
-		if(position.y >= screen_size.y / 0.9):
-			position.y -= 10;
-	else:
-		position.y += 10;
+func _process(delta: float) -> void:
+	if($VisibleOnScreenNotifier2D.is_on_screen() == false):
+		position.y -= 450;
+		
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free();
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	$VisibilityTimer.start();
+	$VisibilityTimer.start()
+	

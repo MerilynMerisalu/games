@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://Level/level_2.gd" id="2_unuj3"]
 [ext_resource type="PackedScene" uid="uid://04qiebq6u6dt" path="res://UI/UI.tscn" id="3_4v24t"]
 
-
 [node name="Level_2" instance=ExtResource("1_uwqse")]
 script = ExtResource("2_unuj3")
 
@@ -12,3 +11,5 @@ script = ExtResource("2_unuj3")
 visible = false
 
 [node name="UI" parent="." index="8" instance=ExtResource("3_4v24t")]
+
+[connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]

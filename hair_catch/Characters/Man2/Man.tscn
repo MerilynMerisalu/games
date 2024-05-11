@@ -1,28 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlxosbil0cn62"]
+[gd_scene load_steps=3 format=3 uid="uid://3tr4e70kvepg"]
 
-[ext_resource type="Script" path="res://Characters/Man2/Man.gd" id="1_2q841"]
-[ext_resource type="Texture2D" uid="uid://bobcchfllnj5a" path="res://assets/characters/man/evil.png" id="2_r3n4m"]
+[ext_resource type="Script" path="res://Characters/Man2/Man.gd" id="1_817fy"]
+[ext_resource type="Texture2D" uid="uid://bobcchfllnj5a" path="res://assets/characters/man/evil.png" id="1_1481k"]
 
 [node name="Man" type="Area2D"]
-position = Vector2(-68, 134)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("1_2q841")
-metadata/_edit_group_ = true
+position = Vector2(348, -86)
+script = ExtResource("1_817fy")
+metadata/_edit_horizontal_guides_ = [-61.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(332, 330)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_r3n4m")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(847, -418)
-rect = Rect2(-10, -10, 180, 130)
-
-[node name="VisibilityTimer" type="Timer" parent="."]
-one_shot = true
+texture = ExtResource("1_1481k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(956, -588)
-polygon = PackedVector2Array(42, 182, 6, 220, -64, 206, -100, 256)
+position = Vector2(492, 72)
+polygon = PackedVector2Array(-62, 61, -106, 95, -138, 85)
 
+[node name="VisibilityTimer" type="Timer" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(299, 195)
+rect = Rect2(-90, -65, 250, 400)
+
+[connection signal="timeout" from="VisibilityTimer" to="." method="_on_visibility_timer_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
