@@ -18,6 +18,7 @@ position = Vector2(492, 72)
 polygon = PackedVector2Array(-62, 61, -106, 95, -138, 85)
 
 [node name="VisibilityTimer" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(299, 195)
