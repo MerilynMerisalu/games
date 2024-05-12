@@ -1,12 +1,12 @@
 extends Area2D
 
-const CHANGED_BY : int = 530
+const CHANGED_BY : int = 530;
 var has_timer_started : bool = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position.x = randf_range(0, Screen.screen_size.y);
 	position.y = Screen.screen_size.y;
-	
+	print(position.y)
 		
 
 
@@ -28,3 +28,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 func _on_visibility_timer_timeout() -> void:
 	position.y += CHANGED_BY;
 	has_timer_started = true;
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free();
