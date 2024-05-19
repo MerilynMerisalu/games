@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://eck3ijfgvsio"]
+
+[ext_resource type="Script" path="res://UI/health_progress_bar.gd" id="1_n3xt5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdynq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i228"]
+bg_color = Color(0.446659, 0.617109, 0.792028, 1)
+
+[node name="HealthProgressBar" type="Node"]
+script = ExtResource("1_n3xt5")
+
+[node name="HealthProgressBar" type="ProgressBar" parent="."]
+offset_left = 74.0
+offset_top = 218.0
+offset_right = 675.0
+offset_bottom = 279.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xdynq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1i228")
+value = 45.0
+show_percentage = false
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -615.0
+offset_top = -147.0
+offset_right = 615.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 77
+text = "Click"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
