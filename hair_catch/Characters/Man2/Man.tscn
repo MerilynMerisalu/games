@@ -20,3 +20,5 @@ polygon = PackedVector2Array(-62, 61, -106, 95, -138, 85)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(299, 195)
 rect = Rect2(-90, -65, 250, 400)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

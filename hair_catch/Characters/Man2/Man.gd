@@ -4,6 +4,8 @@ extends Area2D
 
 const UPPER_BOUNDARY : int = 550;
 const MOVE_AMOUNT : int = 10;
+
+var collided : bool = false;
 var has_appeared : bool = false;
 var is_up : bool = false;
 var is_down : bool = true;
@@ -34,3 +36,9 @@ func _process(_delta: float) -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	if(has_appeared == true):
 		queue_free();
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if(body.name == "Bird" and collided == false):
+		collided = true;
+		print("Collided!")
