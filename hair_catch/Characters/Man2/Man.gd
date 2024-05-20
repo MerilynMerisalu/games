@@ -25,7 +25,6 @@ func _process(_delta: float) -> void:
 			position.y -= MOVE_AMOUNT;
 		else:
 			is_up = true;
-			EventBus.man_position.emit(position)
 			await get_tree().create_timer(3.0).timeout;
 			has_appeared = true;
 			if is_up == true:
