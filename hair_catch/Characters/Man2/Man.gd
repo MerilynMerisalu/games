@@ -15,6 +15,7 @@ func _ready() -> void:
 	position.x = randf_range(0, Screen.screen_size.x);
 	position.y = Screen.screen_size.y;
 	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +25,7 @@ func _process(_delta: float) -> void:
 			position.y -= MOVE_AMOUNT;
 		else:
 			is_up = true;
+			EventBus.man_position.emit(position)
 			await get_tree().create_timer(3.0).timeout;
 			has_appeared = true;
 			if is_up == true:
@@ -41,4 +43,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if(body.name == "Bird" and collided == false):
 		collided = true;
-		print("Collided!")
+		EventBus.man_position.emit(position);
+		

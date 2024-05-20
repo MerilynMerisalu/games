@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bobcchfllnj5a" path="res://assets/characters/man/evil.png" id="1_1481k"]
 
 [node name="Man" type="Area2D"]
-position = Vector2(348, -86)
+position = Vector2(292, -4)
 script = ExtResource("1_817fy")
 metadata/_edit_horizontal_guides_ = [-61.0]
 

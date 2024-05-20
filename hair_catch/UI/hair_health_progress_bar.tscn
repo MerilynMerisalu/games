@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://r42iqbco77r8"]
+
+[ext_resource type="Script" path="res://UI/hair_health_progress_bar.gd" id="1_a7i8o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tht2e"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akcyd"]
+bg_color = Color(0.318658, 0.636556, 0.832457, 1)
+
+[node name="HairHealthProgressBar" type="ProgressBar"]
+offset_right = 358.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 77
+theme_override_styles/background = SubResource("StyleBoxFlat_tht2e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_akcyd")
+value = 45.0
+show_percentage = false
+script = ExtResource("1_a7i8o")

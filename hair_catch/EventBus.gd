@@ -10,7 +10,7 @@ signal hair_left_label_refresed(hair_left : int);
 signal game_timer_label_refresed(minutes : int, seconds : int);
 signal start_label_finished;
 signal lose;
-
+signal man_position(position : Vector2);
 
 
 
