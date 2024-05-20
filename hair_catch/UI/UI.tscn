@@ -19,7 +19,3 @@ texture_under = ExtResource("3_kkusq")
 
 [node name="HairHealthProgressBar" parent="." index="4" instance=ExtResource("3_5hjpa")]
 layout_mode = 0
-offset_left = 848.0
-offset_top = 240.0
-offset_right = 1164.0
-offset_bottom = 315.0

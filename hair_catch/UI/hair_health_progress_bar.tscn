@@ -9,8 +9,8 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.318658, 0.636556, 0.832457, 1)
 
 [node name="HairHealthProgressBar" type="ProgressBar"]
-offset_right = 358.0
-offset_bottom = 75.0
+offset_right = 409.0
+offset_bottom = 55.0
 theme_override_font_sizes/font_size = 77
 theme_override_styles/background = SubResource("StyleBoxFlat_tht2e")
 theme_override_styles/fill = SubResource("StyleBoxFlat_akcyd")
