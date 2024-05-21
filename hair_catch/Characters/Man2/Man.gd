@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 			is_up = true;
 			await get_tree().create_timer(3.0).timeout;
 			has_appeared = true;
-			if is_up == true:
+			if is_up == true and collided == false:
 				if(position.y < Screen.screen_size.y):
 					position.y += MOVE_AMOUNT;
 				
