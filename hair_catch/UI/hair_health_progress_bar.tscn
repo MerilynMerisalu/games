@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://r42iqbco77r8"]
+[gd_scene load_steps=5 format=3 uid="uid://r42iqbco77r8"]
 
 [ext_resource type="Script" path="res://UI/hair_health_progress_bar.gd" id="1_a7i8o"]
+[ext_resource type="AudioStream" uid="uid://mjvb6ssknfb1" path="res://assets/audio/long_pain.mp3" id="2_ahasb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tht2e"]
 bg_color = Color(0, 0, 0, 1)
@@ -17,3 +18,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_akcyd")
 value = 45.0
 show_percentage = false
 script = ExtResource("1_a7i8o")
+
+[node name="LongPain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ahasb")

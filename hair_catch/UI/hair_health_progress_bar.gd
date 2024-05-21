@@ -11,7 +11,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("pull")):
 		value -= 3 * 10;
-		value_changed.emit(value)
+		value_changed.emit(value);
+		$LongPain.play();
 
 
 
