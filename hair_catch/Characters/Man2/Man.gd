@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 			if is_up == true and collided == false:
 				if(position.y < Screen.screen_size.y):
 					position.y += MOVE_AMOUNT;
+			
 				
 				
 

@@ -3,6 +3,7 @@ extends Node
 
 
 signal hair_caught;
+signal hair_pull;
 signal create_man;
 signal bird_can_move;
 signal level_up(level : int);
