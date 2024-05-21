@@ -13,6 +13,8 @@ func _process(_delta: float) -> void:
 		value -= 3 * 10;
 		value_changed.emit(value);
 		$LongPain.play();
+		if(value == 0):
+			EventBus.hair_caught.emit();
 
 
 
