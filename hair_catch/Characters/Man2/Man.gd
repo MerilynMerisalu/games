@@ -20,17 +20,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if (has_appeared == false):
+	if(has_appeared == false):
 		if(position.y > (Screen.screen_size.y - UPPER_BOUNDARY)):
 			position.y -= MOVE_AMOUNT;
 		else:
 			is_up = true;
 			await get_tree().create_timer(3.0).timeout;
 			has_appeared = true;
-			if is_up == true and collided == false:
+			if(is_up == true and collided == false):
 				if(position.y < Screen.screen_size.y):
 					position.y += MOVE_AMOUNT;
 			
+				
 				
 				
 
@@ -45,3 +46,10 @@ func _on_body_entered(body: Node2D) -> void:
 		collided = true;
 		EventBus.man_position.emit(position);
 		
+
+
+
+func _on_body_exited(body: Node2D) -> void:
+	await get_tree().create_timer(2.0).timeout;
+	collided = false;
+	print(collided)

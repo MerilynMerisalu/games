@@ -15,6 +15,7 @@ signal man_position(position : Vector2);
 
 
 
+
 const HAIR_LEFT : String = " Hair Left";
 
 var is_creating_men : bool = true;
@@ -25,6 +26,7 @@ var health : int = 30;
 var damage : int = 0;
 var level : int = 1;
 var reset_values : bool = false;
+var is_hair_pulled : bool = false;
 
 
 # Called when the node enters the scene tree for the first time.
