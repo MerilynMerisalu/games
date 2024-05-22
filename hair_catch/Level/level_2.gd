@@ -13,4 +13,8 @@ func _process(_delta: float) -> void:
 
 func _on_create_man_timer_timeout() -> void:
 	var man = MAN_SCENE.instantiate();
-	$Men.add_child(man);
+	if($Men.get_child_count() > 4):
+		await get_tree().create_timer(4.0).timeout;
+		$Men.add_child(man);
+	else:
+		$Men.add_child(man);
