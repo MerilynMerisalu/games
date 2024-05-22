@@ -5,7 +5,7 @@ func _ready() -> void:
 	value = 100;
 	visible = false;
 	EventBus.man_position.connect(_on_set_life_bar_position);
-	
+	EventBus.hide_hair_life_bar.connect(_on_hide_life_bar);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -24,6 +24,9 @@ func _on_set_life_bar_position(man_position : Vector2) -> void:
 	position.y += 50;
 	visible = true;
 	
+
+func _on_hide_life_bar() -> void:
+	visible = false;
 
 
 
