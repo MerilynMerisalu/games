@@ -4,17 +4,21 @@ extends Area2D
 
 const UPPER_BOUNDARY : int = 550;
 const MOVE_AMOUNT : int = 10;
+const MAN_CRY_IMG : Texture = preload("res://assets/characters/man/cry.png");
+const MAN_HAIRLESS_IMG : Texture = preload("res://assets/characters/man/hairless.png")
+const IMAGES : Array = [MAN_CRY_IMG, MAN_HAIRLESS_IMG];
 
 var collided : bool = false;
 var has_appeared : bool = false;
 var is_up : bool = false;
 var is_down : bool = true;
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position.x = randf_range(0, Screen.screen_size.x);
 	position.y = Screen.screen_size.y;
-	
+	EventBus.change_man_sprite.connect(_on_man_sprite_man_change);
 	
 
 
@@ -52,4 +56,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(_body: Node2D) -> void:
 	await get_tree().create_timer(2.0).timeout;
 	collided = false;
-	EventBus.hide_hair_life_bar.emit()
+	EventBus.hide_hair_life_bar.emit();
+	
+
+func _on_man_sprite_man_change() -> void:
+	$Sprite2D.texture = IMAGES.pick_random();

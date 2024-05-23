@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 		$LongPain.play();
 		if(value == 0):
 			EventBus.hair_caught.emit();
-			EventBus.man_can_move.emit();
+			EventBus.change_man_sprite.emit()
 
 
 

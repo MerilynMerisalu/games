@@ -13,6 +13,7 @@ signal game_timer_label_refresed(minutes : int, seconds : int);
 signal start_label_finished;
 signal lose;
 signal man_position(position : Vector2);
+signal change_man_sprite;
 
 
 
