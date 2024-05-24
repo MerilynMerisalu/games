@@ -18,6 +18,7 @@ var is_down : bool = true;
 func _ready() -> void:
 	position.x = randf_range(0, Screen.screen_size.x);
 	position.y = Screen.screen_size.y;
+	$HairHealthProgressBar.visible = false;
 	EventBus.change_man_sprite.connect(_on_man_sprite_man_change);
 	
 
@@ -48,6 +49,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if(body.name == "Bird" and collided == false):
 		collided = true;
+		$HairHealthProgressBar.visible = true;
 		EventBus.man_position.emit(position);
 		
 
