@@ -20,7 +20,7 @@ func _ready() -> void:
 	position.y = Screen.screen_size.y;
 	$HairHealthProgressBar.visible = false;
 	EventBus.change_man_sprite.connect(_on_man_sprite_man_change);
-	
+	EventBus.queue_free_man.connect(_on_queue_free_man);
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,3 +63,7 @@ func _on_body_exited(_body: Node2D) -> void:
 
 func _on_man_sprite_man_change() -> void:
 	$Sprite2D.texture = IMAGES.pick_random();
+
+
+func _on_queue_free_man() -> void:
+	queue_free()

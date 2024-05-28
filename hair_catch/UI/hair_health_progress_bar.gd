@@ -1,5 +1,7 @@
 extends ProgressBar
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	value = 100;
@@ -15,8 +17,15 @@ func _process(_delta: float) -> void:
 		$LongPain.play();
 		if(value == 0):
 			EventBus.hair_caught.emit();
-			EventBus.change_man_sprite.emit()
+			visible = false;
+			EventBus.change_man_sprite.emit();
+			EventBus.queue_free_man.emit();
+			_on_recharge_life();
 
+
+func _on_recharge_life() -> void:
+	value = 100;
+	value_changed.emit(value);
 
 
 

@@ -14,7 +14,7 @@ signal start_label_finished;
 signal lose;
 signal man_position(position : Vector2);
 signal change_man_sprite;
-
+signal queue_free_man;
 
 
 
