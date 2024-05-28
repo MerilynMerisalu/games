@@ -20,7 +20,7 @@ func _ready() -> void:
 	position.y = Screen.screen_size.y;
 	$HairHealthProgressBar.visible = false;
 	EventBus.change_man_sprite.connect(_on_man_sprite_man_change);
-	EventBus.queue_free_man.connect(_on_queue_free_man);
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,6 +44,8 @@ func _process(_delta: float) -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	if(has_appeared == true):
 		queue_free();
+		if $HairHealthProgressBar.value == 0:
+			EventBus.recharge_hair_health.emit();
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -62,8 +64,23 @@ func _on_body_exited(_body: Node2D) -> void:
 	
 
 func _on_man_sprite_man_change() -> void:
-	$Sprite2D.texture = IMAGES.pick_random();
+	if(EventBus.is_hair_pulled == true): 
+		$Sprite2D.texture = IMAGES.pick_random();
+		collided = false;
+		EventBus.hide_hair_life_bar.emit();
+		
+		
+
+	
+	
+	
+	
+	
+	
 
 
-func _on_queue_free_man() -> void:
-	queue_free()
+
+	
+	
+
+

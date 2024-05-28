@@ -7,9 +7,13 @@
 [node name="Level_2" instance=ExtResource("1_uwqse")]
 script = ExtResource("2_unuj3")
 
+[node name="ColorRect" parent="." index="0"]
+mouse_filter = 2
+
 [node name="BaseUI" parent="." index="1"]
 visible = false
 
 [node name="UI" parent="." index="8" instance=ExtResource("3_4v24t")]
 
+[connection signal="child_exiting_tree" from="Men" to="." method="_on_men_child_exiting_tree"]
 [connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]
