@@ -44,8 +44,8 @@ func _process(_delta: float) -> void:
 
 func game_over() -> void:
 	get_tree().change_scene_to_file("res://Loss/Loss.tscn");
-	
-		
+
+
 
 
 

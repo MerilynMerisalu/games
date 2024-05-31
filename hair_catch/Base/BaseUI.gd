@@ -25,7 +25,7 @@ func _ready() -> void:
 	_on_refresh_hair_label();
 	EventBus.start_label_finished.connect(_on_game_timer_timeout);
 	EventBus.hair_caught.connect(_on_hair_caught);
-	
+
 
 
 
@@ -39,16 +39,16 @@ func _on_refresh_game_timer_label() -> void:
 		if (default_seconds == 0):
 			if (default_minutes > 0):
 				default_minutes -= 1;
-				default_seconds -= 10; 
+				default_seconds -= 10;
 		else :
 			default_seconds -= 10;
-	
+
 	_reset_timer();
 	game_timer_label.text = str(default_minutes) \
 		+ ":" + str(default_seconds);
-	
-	
-	
+
+
+
 func _reset_timer() -> void:
 	minutes = default_minutes;
 	seconds = default_seconds;
@@ -57,7 +57,7 @@ func _reset_timer() -> void:
 func on_hair_left_changed(_hair_left: int) -> void:
 		hair_left_label.text = str(hair_left) \
 			+ EventBus.HAIR_LEFT;
-		
+
 
 func _on_game_timer_timeout() -> void:
 	if(seconds == 0):
@@ -75,7 +75,7 @@ func _on_game_timer_timeout() -> void:
 		emit_game_over();
 		game_timer.stop();
 		ticking.stop();
-		
+
 	game_timer_label.text = str(minutes) + ":" \
 		+ str(seconds);
 
@@ -96,18 +96,18 @@ func _on_hair_caught():
 		EventBus.level_up.emit();
 		game_timer.stop();
 		_on_refresh_hair_label();
-		
-		
-	
+
+
+
 func _on_refresh_hair_label() -> void:
 	if (EventBus.is_level_passed == true):
 		initial_hair_left -= 5;
 		$"HairLeftBoxContainer/HairLeftLabel"\
 			.text = str(initial_hair_left) +\
-		 		EventBus.HAIR_LEFT; 
+		 		EventBus.HAIR_LEFT;
 	else:
 		$"HairLeftBoxContainer/HairLeftLabel".text = str(initial_hair_left) + \
-				EventBus.HAIR_LEFT; 
+				EventBus.HAIR_LEFT;
 
 
 func _on_refresh_score_label() -> void:
@@ -119,11 +119,11 @@ func emit_game_over() -> void:
 		if (minutes == 0 and seconds == 0) \
 			and hair_left > 0:
 				EventBus.lose.emit();
-				
-				
-				
 
-		
+
+
+
+
 
 
 

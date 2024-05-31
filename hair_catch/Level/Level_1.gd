@@ -8,8 +8,8 @@ func _ready() -> void:
 	EventBus.level_up.connect(_on_stop_create_man );
 	EventBus.start_label_finished.connect(_on_create_man_timer_timeout);
 	EventBus.level_up.connect(_on_change_level );
-	
-	
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

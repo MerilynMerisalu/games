@@ -10,14 +10,14 @@ func _ready() -> void:
 	screen_size = Screen.screen_size;
 	position.x = randf_range(POSITION_X_START_VALUE,
 	 Screen.screen_size.x - Screen.SCREEN_CONSTRAINT )
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 
- 
+
 
 func _on_body_entered(body: Node) -> void:
 	if(body.name == "Bird" and is_collided == false):

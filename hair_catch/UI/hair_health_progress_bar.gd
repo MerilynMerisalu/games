@@ -6,7 +6,7 @@ extends ProgressBar
 func _ready() -> void:
 	value = 100;
 	EventBus.recharge_hair_health.connect(_on_recharge_hair_health);
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

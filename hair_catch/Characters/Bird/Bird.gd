@@ -6,8 +6,8 @@ var timer_delay : float = 0.1;
 func _ready() -> void:
 	position = Vector2(137, 429);
 	EventBus.bird_can_move.connect(move);
-	
-	
+
+
 func _input(event: InputEvent) -> void:
 	if(can_move == true):
 		if (event is InputEventMouseMotion):
@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 			$AnimationTimer.stop()
 			$AnimationTimer.start(timer_delay)
 		$AnimationTimer.start();
-		
+
 
 func move() -> void:
 	can_move = true;
@@ -26,7 +26,7 @@ func move() -> void:
 		_ready();
 		if(EventBus.is_start_label_finished == true):
 			EventBus.is_level_passed = false;
-		
+
 
 func _on_animation_timer_timeout() -> void:
 	$AnimatedSprite2D.stop();
