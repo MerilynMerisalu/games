@@ -20,7 +20,7 @@ func _ready() -> void:
 	position.y = Screen.screen_size.y;
 	$HairHealthProgressBar.visible = false;
 	EventBus.change_man_sprite.connect(_on_man_sprite_man_change);
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,10 +35,12 @@ func _process(_delta: float) -> void:
 			if(is_up == true and collided == false):
 				if(position.y < Screen.screen_size.y):
 					position.y += MOVE_AMOUNT;
-			
-				
-				
-				
+
+
+func hurt():
+	$HairHealthProgressBar.value -= 1
+	if $HairHealthProgressBar.value == -1:
+		$HairHealthProgressBar.value = 0
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
@@ -53,7 +55,7 @@ func _on_body_entered(body: Node2D) -> void:
 		collided = true;
 		$HairHealthProgressBar.visible = true;
 		EventBus.man_position.emit(position);
-		
+
 
 
 
@@ -61,26 +63,26 @@ func _on_body_exited(_body: Node2D) -> void:
 	await get_tree().create_timer(2.0).timeout;
 	collided = false;
 	EventBus.hide_hair_life_bar.emit();
-	
+
 
 func _on_man_sprite_man_change() -> void:
-	if(EventBus.is_hair_pulled == true): 
+	if(EventBus.is_hair_pulled == true):
 		$Sprite2D.texture = IMAGES.pick_random();
 		collided = false;
 		EventBus.hide_hair_life_bar.emit();
-		
-		
-
-	
-	
-	
-	
-	
-	
 
 
 
-	
-	
+
+
+
+
+
+
+
+
+
+
+
 
 

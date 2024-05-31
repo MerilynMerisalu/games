@@ -1,8 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://vdl6w3nakfbg"]
+[gd_scene load_steps=14 format=3 uid="uid://vdl6w3nakfbg"]
 
 [ext_resource type="PackedScene" uid="uid://bi2wokewfk6hk" path="res://Base/BaseLevel.tscn" id="1_uwqse"]
 [ext_resource type="Script" path="res://Level/level_2.gd" id="2_unuj3"]
 [ext_resource type="PackedScene" uid="uid://04qiebq6u6dt" path="res://UI/UI.tscn" id="3_4v24t"]
+[ext_resource type="Script" path="res://Level/Bird2.gd" id="4_lc1gy"]
+[ext_resource type="Texture2D" uid="uid://dgdp0dtoqjosw" path="res://assets/characters/bird/bird_1.png" id="5_0wnjg"]
+[ext_resource type="Texture2D" uid="uid://2o2f447gjbon" path="res://assets/characters/bird/bird_2.png" id="6_ikm35"]
+[ext_resource type="Texture2D" uid="uid://gge60qpfplba" path="res://assets/characters/bird/bird_3.png" id="7_mxvyi"]
+[ext_resource type="Texture2D" uid="uid://crpp8nayo8fd3" path="res://assets/characters/bird/bird_4.png" id="8_i7osd"]
+[ext_resource type="Texture2D" uid="uid://c8l1plsqtvrql" path="res://assets/characters/bird/bird_5.png" id="9_5tlqk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7emm5"]
+load_path = "res://.godot/imported/bird_1.png-fb11ffe7c84230410341b3f4118de27f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m0co3"]
+load_path = "res://.godot/imported/bird_0.png-ca223a07a9f5c3e56e02b682df4d3d0b.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wppd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7emm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0wnjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ikm35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mxvyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i7osd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tlqk")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_m0co3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ycd6"]
+size = Vector2(137.444, 100.495)
 
 [node name="Level_2" instance=ExtResource("1_uwqse")]
 script = ExtResource("2_unuj3")
@@ -13,7 +62,33 @@ mouse_filter = 2
 [node name="BaseUI" parent="." index="1"]
 visible = false
 
-[node name="UI" parent="." index="8" instance=ExtResource("3_4v24t")]
+[node name="UI" parent="." index="7" instance=ExtResource("3_4v24t")]
+
+[node name="Bird2" type="Area2D" parent="." index="8"]
+script = ExtResource("4_lc1gy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird2" index="0"]
+position = Vector2(157, 304)
+rotation = 0.0377486
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_8wppd")
+animation = &"fly"
+frame = 3
+frame_progress = 0.867829
+
+[node name="BeakCollisionShape2D" type="CollisionShape2D" parent="Bird2" index="1"]
+position = Vector2(307, 383)
+rotation = 0.0377486
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_3ycd6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bird2" index="2"]
+position = Vector2(172, 422)
+rotation = 0.0377486
+scale = Vector2(0.4, 0.4)
+polygon = PackedVector2Array(147.867, 6.92456, -112.891, -8.24536, -209.998, -194.713, -198.028, -275.223, -280.613, -342.153, -65.6672, -215.175, 90.2642, -60.9498)
+
+[node name="AnimationTimer" type="Timer" parent="Bird2" index="3"]
 
 [connection signal="child_exiting_tree" from="Men" to="." method="_on_men_child_exiting_tree"]
 [connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]
