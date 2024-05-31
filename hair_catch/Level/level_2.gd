@@ -27,4 +27,4 @@ func _on_create_man_timer_timeout() -> void:
 
 
 func _on_men_child_exiting_tree(node: Node) -> void:
-	$Men.remove_child(node)
+	$Men.remove_child.call_deferred(node)
