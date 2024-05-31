@@ -1,0 +1,9 @@
+# Gobbo configuration for snoopdouglas.
+
+gobbo = 1
+godot = "4.2.2"
+
+[project]
+src = "hair_catch"
+name = "Hair Catch"
+version = "0.0.1"
