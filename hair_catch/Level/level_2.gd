@@ -1,6 +1,7 @@
 extends Node
 
 
+
 const MAX_NUM_MEN_ON_THE_SCREEN : int = 2;
 const TIMER_DURATION : float = 8.0;
 const MAN_SCENE : PackedScene = preload("res://Characters/Man2/Man.tscn")
@@ -28,3 +29,6 @@ func _on_create_man_timer_timeout() -> void:
 
 func _on_men_child_exiting_tree(node: Node) -> void:
 	$Men.remove_child.call_deferred(node)
+
+
+

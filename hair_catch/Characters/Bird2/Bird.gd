@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 signal hit;
 var can_move: bool = false;
@@ -30,4 +30,3 @@ func move() -> void:
 
 func _on_animation_timer_timeout() -> void:
 	$AnimatedSprite2D.stop();
-

@@ -44,43 +44,24 @@ func _process(_delta: float) -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	if(has_appeared == true):
 		queue_free();
-		if $HairHealthProgressBar.value == 0:
-			EventBus.recharge_hair_health.emit();
+			
 
 
-func _on_body_entered(body: Node2D) -> void:
-	if(body.name == "Bird" and collided == false):
-		collided = true;
-		$HairHealthProgressBar.visible = true;
-		EventBus.man_position.emit(position);
-		
-
-
-
-func _on_body_exited(_body: Node2D) -> void:
-	await get_tree().create_timer(2.0).timeout;
-	collided = false;
-	EventBus.hide_hair_life_bar.emit();
 	
 
 func _on_man_sprite_man_change() -> void:
 	if(EventBus.is_hair_pulled == true): 
 		$Sprite2D.texture = IMAGES.pick_random();
 		collided = false;
-		EventBus.hide_hair_life_bar.emit();
-		
-		
-
-	
-	
-	
-	
-	
+		$HairHealthProgressBar.visible = false;
 	
 
 
+func _on_area_entered(area: Area2D) -> void:
+	if(area.name == "Bird"):
+		$HairHealthProgressBar.visible = true;
 
-	
-	
 
-
+func _on_area_exited(area: Area2D) -> void:
+	if(area.name == "Bird"):
+		$HairHealthProgressBar.visible = false;

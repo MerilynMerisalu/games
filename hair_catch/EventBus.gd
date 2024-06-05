@@ -3,8 +3,8 @@ extends Node
 
 
 signal hair_caught;
-signal hair_pull();
-signal hide_hair_life_bar;
+signal hair_pull;
+
 signal create_man;
 signal bird_can_move;
 signal level_up(level : int);
@@ -12,7 +12,6 @@ signal hair_left_label_refresed(hair_left : int);
 signal game_timer_label_refresed(minutes : int, seconds : int);
 signal start_label_finished;
 signal lose;
-signal man_position(position : Vector2);
 signal change_man_sprite;
 signal recharge_hair_health;
 signal remove_man(man : Node2D)
