@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbk74678pp3ar"]
 
-[ext_resource type="Texture2D" uid="uid://1iwx05gfq0lj" path="res://assets/characters/man/calm.png" id="1_nry83"]
+[ext_resource type="Texture2D" uid="uid://dqm3osd0bsuff" path="res://assets/characters/man/calm.png" id="1_nry83"]
 [ext_resource type="Script" path="res://Characters/Man/Man.gd" id="1_yyhks"]
 [ext_resource type="AudioStream" uid="uid://b388t4iuolyun" path="res://assets/audio/pain.mp3" id="3_wiaqy"]
 

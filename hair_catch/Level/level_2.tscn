@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://vdl6w3nakfbg"]
+[gd_scene load_steps=4 format=3 uid="uid://vdl6w3nakfbg"]
 
 [ext_resource type="PackedScene" uid="uid://bi2wokewfk6hk" path="res://Base/BaseLevel.tscn" id="1_uwqse"]
 [ext_resource type="Script" path="res://Level/level_2.gd" id="2_unuj3"]
 [ext_resource type="PackedScene" uid="uid://04qiebq6u6dt" path="res://UI/UI.tscn" id="3_4v24t"]
-[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Characters/Bird2/Bird.tscn" id="4_kvojy"]
 
 [node name="Level_2" instance=ExtResource("1_uwqse")]
 script = ExtResource("2_unuj3")
@@ -16,8 +15,5 @@ visible = false
 
 [node name="UI" parent="." index="7" instance=ExtResource("3_4v24t")]
 
-[node name="Bird" parent="." index="8" instance=ExtResource("4_kvojy")]
-
 [connection signal="child_exiting_tree" from="Men" to="." method="_on_men_child_exiting_tree"]
 [connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]
-[connection signal="area_entered" from="Bird" to="." method="_on_bird_area_entered"]

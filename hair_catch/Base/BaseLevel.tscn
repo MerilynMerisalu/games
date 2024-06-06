@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi2wokewfk6hk"]
+[gd_scene load_steps=6 format=3 uid="uid://bi2wokewfk6hk"]
 
 [ext_resource type="PackedScene" uid="uid://dpro5dfcnb82p" path="res://Base/BaseUI.tscn" id="1_1sjsu"]
 [ext_resource type="Script" path="res://Base/BaseLevel.gd" id="1_fja38"]
 [ext_resource type="PackedScene" uid="uid://dt03dccxhppqn" path="res://UI/LevelLabel.tscn" id="3_3qdot"]
+[ext_resource type="PackedScene" uid="uid://cq16helqlma2s" path="res://Characters/Bird/Bird.tscn" id="3_17f34"]
 [ext_resource type="AudioStream" uid="uid://cnang4ncw3gpo" path="res://assets/audio/clock.mp3" id="5_4ira2"]
 
 [node name="BaseLevel" type="Node"]
@@ -16,6 +17,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BaseUI" parent="." instance=ExtResource("1_1sjsu")]
+
+[node name="Bird" parent="." instance=ExtResource("3_17f34")]
+position = Vector2(160, 216)
 
 [node name="LevelContainer" parent="." instance=ExtResource("3_3qdot")]
 offset_top = -45.0

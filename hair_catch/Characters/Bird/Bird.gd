@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 signal hit;
 var can_move: bool = false;
