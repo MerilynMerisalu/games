@@ -12,7 +12,7 @@ var collided : bool = false;
 var has_appeared : bool = false;
 var is_up : bool = false;
 var is_down : bool = true;
-
+var can_interact : bool = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -58,10 +58,19 @@ func _on_man_sprite_man_change() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if(area.name == "Bird"):
+	if(area.name == "HitBox"):
 		$HairHealthProgressBar.visible = true;
+		can_interact = true
 
 
 func _on_area_exited(area: Area2D) -> void:
-	if(area.name == "Bird"):
+	if(area.name == "HitBox"):
 		$HairHealthProgressBar.visible = false;
+		can_interact = false;
+		
+func _input(event):
+	if(event.is_action_pressed("pull") and can_interact == true):
+		$HairHealthProgressBar/LongPain.play()
+
+
+

@@ -6,4 +6,7 @@
 [node name="Level1" instance=ExtResource("1_1r6lf")]
 script = ExtResource("2_5xdtf")
 
+[node name="ColorRect" parent="." index="0"]
+mouse_filter = 2
+
 [connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]

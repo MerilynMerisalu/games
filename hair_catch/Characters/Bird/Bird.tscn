@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq16helqlma2s"]
+[gd_scene load_steps=10 format=3 uid="uid://cq16helqlma2s"]
 
 [ext_resource type="Script" path="res://Characters/Bird/Bird.gd" id="1_u0vwu"]
 [ext_resource type="Texture2D" uid="uid://dgdp0dtoqjosw" path="res://assets/characters/bird/bird_1.png" id="2_07yj6"]
@@ -47,9 +47,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ycd6"]
-size = Vector2(137.444, 100.495)
-
 [node name="Bird" type="CharacterBody2D"]
 position = Vector2(800, 668)
 rotation = 0.0377486
@@ -63,14 +60,16 @@ animation = &"fly"
 frame = 3
 frame_progress = 0.867829
 
-[node name="BeakCollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(382.186, 183.207)
-shape = SubResource("RectangleShape2D_3ycd6")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(48.6063, 293.374)
 polygon = PackedVector2Array(147.867, 6.92456, -112.891, -8.24536, -209.998, -194.713, -198.028, -275.223, -280.613, -342.153, -65.6672, -215.175, 90.2642, -60.9498)
 
 [node name="AnimationTimer" type="Timer" parent="."]
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+position = Vector2(339.093, -162.913)
+polygon = PackedVector2Array(-50.436, -10.6041, -52.8811, 189.631, -478.046, 325.773, -587.122, 219.814, -520.101, 7.13342, -382.465, -58.1074, -132.832, -72.5386)
 
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
