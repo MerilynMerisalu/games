@@ -35,6 +35,8 @@ func _process(_delta: float) -> void:
 			if(is_up == true and collided == false):
 				if(position.y < Screen.screen_size.y):
 					position.y += MOVE_AMOUNT;
+			elif(is_up == true and collided == true and can_interact == true):
+				position = position;
 			
 				
 				
@@ -61,17 +63,16 @@ func _on_area_entered(area: Area2D) -> void:
 	if(area.name == "HitBox"):
 		$HairHealthProgressBar.visible = true;
 		can_interact = true
-
+		collided = true;
 
 func _on_area_exited(area: Area2D) -> void:
 	if(area.name == "HitBox"):
 		$HairHealthProgressBar.visible = false;
 		can_interact = false;
+		collided = false;
+		
 		
 func _input(event):
 	if(event.is_action_pressed("pull") and can_interact == true):
 		$HairHealthProgressBar._on_pull_hair();
 		$HairHealthProgressBar/LongPain.play()
-
-
-
