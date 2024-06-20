@@ -17,6 +17,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_create_man_timer_timeout() -> void:
+	EventBus.is_creating_men = true;
 	if EventBus.is_creating_men == true:
 		var man = MAN_SCENE.instantiate();
 		$Men.call_deferred("add_child", man);
