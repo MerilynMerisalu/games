@@ -19,7 +19,7 @@ func _ready() -> void:
 	position.x = randf_range(0, Screen.screen_size.x);
 	position.y = Screen.screen_size.y;
 	$HairHealthProgressBar.visible = false;
-	EventBus.change_man_sprite.connect(_on_man_sprite_man_change);
+	
 	
 
 
@@ -46,16 +46,7 @@ func _process(_delta: float) -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	if(has_appeared == true):
 		queue_free();
-			
-
-
 	
-
-func _on_man_sprite_man_change() -> void:
-	if(EventBus.is_hair_pulled == true): 
-		$Sprite2D.texture = IMAGES.pick_random();
-		collided = false;
-		$HairHealthProgressBar.visible = false;
 	
 
 
@@ -75,4 +66,7 @@ func _on_area_exited(area: Area2D) -> void:
 func _input(event):
 	if(event.is_action_pressed("pull") and can_interact == true):
 		$HairHealthProgressBar._on_pull_hair();
-		$HairHealthProgressBar/LongPain.play()
+		$HairHealthProgressBar/LongPain.play();
+		if($HairHealthProgressBar.value == 0):
+			$Sprite2D.texture = IMAGES.pick_random(); 
+		
