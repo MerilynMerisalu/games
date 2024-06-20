@@ -3,7 +3,7 @@ extends Node
 
 
 signal hair_caught;
-signal hair_pull;
+#signal hair_pull;
 
 signal create_man;
 signal bird_can_move;
@@ -33,7 +33,7 @@ var is_hair_pulled : bool = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	EventBus.lose.connect(game_over);
+	pass;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,8 +41,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func game_over() -> void:
-	get_tree().change_scene_to_file("res://Loss/Loss.tscn");
+
 	
 		
 

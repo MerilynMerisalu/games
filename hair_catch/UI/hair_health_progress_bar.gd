@@ -28,4 +28,4 @@ func _on_recharge_hair_health() -> void:
 func _on_pull_hair() -> void:
 	value -= 30;
 	if(value == 0):
-		EventBus.hair_caught.emit()
+		EventBus.hair_caught.emit();

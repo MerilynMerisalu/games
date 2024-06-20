@@ -1,6 +1,6 @@
 class_name base_ui extends Control
 
-
+signal game_over
 
 var minutes : int = 0;
 var seconds : int = 0;
@@ -8,7 +8,7 @@ var default_minutes :int = 1;
 var default_seconds : int = 30;
 var hair_left : int = 15;
 var initial_hair_left : int = 15;
-
+var is_score_updated : bool = false;
 
 
 @onready var game_timer_label : Label = get_node("GameTimerBoxContainer/GameTimerLabel")
@@ -72,33 +72,30 @@ func _on_game_timer_timeout() -> void:
 			, Color.RED);
 		ticking.play();
 	if(minutes == 0 and seconds == 0):
-		emit_game_over();
 		game_timer.stop();
 		ticking.stop();
+		game_over.emit()
 		
 	game_timer_label.text = str(minutes) + ":" \
 		+ str(seconds);
 
 
 func _on_hair_caught():
-	print(EventBus.score)
-	if hair_left > 1:
-		hair_left -= 1;
-		EventBus.score += 5;
-		print(EventBus.score)
-		hair_left_label.text = str(hair_left) \
+		if hair_left > 1:
+			hair_left -= 1;
+			EventBus.score += 5;
+			hair_left_label.text = str(hair_left) \
 			+ EventBus.HAIR_LEFT;
-		$"ScoreBoxContainer/ScoreLabel"\
-			.text = str(EventBus.score);
-		print(EventBus.score)
-	else:
-		EventBus.score += 5;
-		$"ScoreBoxContainer/ScoreLabel"\
-			.text = str(EventBus.score);
-		EventBus.is_level_passed = true;
-		EventBus.level_up.emit();
-		game_timer.stop();
-		_on_refresh_hair_label();
+			$"ScoreBoxContainer/ScoreLabel"\
+				.text = str(EventBus.score);
+		else:
+			EventBus.score += 5;
+			$"ScoreBoxContainer/ScoreLabel"\
+				.text = str(EventBus.score);
+			EventBus.is_level_passed = true;
+			EventBus.level_up.emit();
+			game_timer.stop();
+			_on_refresh_hair_label();
 		
 		
 	
@@ -117,11 +114,7 @@ func _on_refresh_score_label() -> void:
 	$"ScoreBoxContainer/ScoreLabel"\
 		.text = str(EventBus.score);
 
-func emit_game_over() -> void:
-	if game_timer.is_stopped() == true:
-		if (minutes == 0 and seconds == 0) \
-			and hair_left > 0:
-				EventBus.lose.emit();
+
 				
 				
 				

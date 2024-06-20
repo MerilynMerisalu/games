@@ -1,7 +1,7 @@
 extends base_level
 
 const MAN_SCENE : PackedScene = preload("res://Characters/Man/Man.tscn");
-
+var is_checking : bool = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.score = 0;
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass;
+	super.game_over()
 
 
 func _on_create_man_timer_timeout() -> void:
@@ -24,8 +24,11 @@ func _on_create_man_timer_timeout() -> void:
 
 func _on_stop_create_man() -> void:
 	EventBus.is_creating_men = false;
+	is_checking = true;
 
 func _on_change_level() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://Level/level_2.tscn" )
+
+
 
 
