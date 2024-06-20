@@ -1,4 +1,4 @@
-extends Node
+extends base_level
 
 
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	super.game_over()
 
 
 func _on_create_man_timer_timeout() -> void:
