@@ -102,6 +102,7 @@ func _on_hair_caught():
 func _on_refresh_hair_label() -> void:
 	if (EventBus.is_level_passed == true):
 		initial_hair_left -= 5;
+		hair_left = initial_hair_left
 		$"HairLeftBoxContainer/HairLeftLabel"\
 			.text = str(initial_hair_left) +\
 		 		EventBus.HAIR_LEFT; 
@@ -113,13 +114,4 @@ func _on_refresh_hair_label() -> void:
 func _on_refresh_score_label() -> void:
 	$"ScoreBoxContainer/ScoreLabel"\
 		.text = str(EventBus.score);
-
-
-				
-				
-				
-
-		
-
-
 
