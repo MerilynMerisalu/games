@@ -1,7 +1,6 @@
 extends Node
 
 
-
 signal hair_caught;
 #signal hair_pull;
 

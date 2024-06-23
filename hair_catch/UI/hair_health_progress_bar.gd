@@ -14,11 +14,6 @@ func _process(_delta: float) -> void:
 	pass
 
 
-
-
-
-
-
 func _on_recharge_hair_health() -> void:
 	value = 100;
 	value_changed.emit(value);

@@ -23,8 +23,9 @@ func _on_body_entered(body: Node) -> void:
 	if(body.name == "Bird" and is_collided == false):
 		$"Sprite2D".texture = CRY_IMG;
 		$Pain.play();
-		EventBus.hair_caught.emit();
-		is_collided = true;
+		if(EventBus.level == 1): 
+			EventBus.hair_caught.emit();
+			is_collided = true;
 
 
 

@@ -1,6 +1,6 @@
 class_name base_ui extends Control
 
-signal game_over
+
 
 var minutes : int = 0;
 var seconds : int = 0;
@@ -8,7 +8,6 @@ var default_minutes :int = 1;
 var default_seconds : int = 30;
 var hair_left : int = 15;
 var initial_hair_left : int = 15;
-var is_score_updated : bool = false;
 
 
 @onready var game_timer_label : Label = get_node("GameTimerBoxContainer/GameTimerLabel")
@@ -26,8 +25,6 @@ func _ready() -> void:
 	EventBus.start_label_finished.connect(_on_game_timer_timeout);
 	EventBus.hair_caught.connect(_on_hair_caught);
 	
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -74,7 +71,7 @@ func _on_game_timer_timeout() -> void:
 	if(minutes == 0 and seconds == 0):
 		game_timer.stop();
 		ticking.stop();
-		game_over.emit()
+		
 		
 	game_timer_label.text = str(minutes) + ":" \
 		+ str(seconds);
@@ -82,8 +79,8 @@ func _on_game_timer_timeout() -> void:
 
 func _on_hair_caught():
 		if hair_left > 1:
-			hair_left -= 1;
 			EventBus.score += 5;
+			hair_left -= 1;
 			hair_left_label.text = str(hair_left) \
 			+ EventBus.HAIR_LEFT;
 			$"ScoreBoxContainer/ScoreLabel"\
@@ -114,4 +111,7 @@ func _on_refresh_hair_label() -> void:
 func _on_refresh_score_label() -> void:
 	$"ScoreBoxContainer/ScoreLabel"\
 		.text = str(EventBus.score);
+		
+		
 
+	

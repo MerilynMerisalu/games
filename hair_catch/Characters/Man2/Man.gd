@@ -1,7 +1,6 @@
 extends Area2D
 
 
-
 const UPPER_BOUNDARY : int = 550;
 const MOVE_AMOUNT : int = 10;
 const MAN_CRY_IMG : Texture = preload("res://assets/characters/man/cry.png");
@@ -63,8 +62,8 @@ func _on_area_exited(area: Area2D) -> void:
 		collided = false;
 		
 		
-func _input(event):
-	if(event.is_action_pressed("pull") and can_interact == true):
+func _input(_event):
+	if(Input.is_action_just_pressed("pull") and can_interact == true):
 		$HairHealthProgressBar._on_pull_hair();
 		$HairHealthProgressBar/LongPain.play();
 		if($HairHealthProgressBar.value == 0):
