@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq16helqlma2s"]
+[gd_scene load_steps=11 format=3 uid="uid://cq16helqlma2s"]
 
 [ext_resource type="Script" path="res://Characters/Bird/Bird.gd" id="1_u0vwu"]
 [ext_resource type="Texture2D" uid="uid://dgdp0dtoqjosw" path="res://assets/characters/bird/bird_1.png" id="2_07yj6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gge60qpfplba" path="res://assets/characters/bird/bird_3.png" id="4_7y0mm"]
 [ext_resource type="Texture2D" uid="uid://crpp8nayo8fd3" path="res://assets/characters/bird/bird_4.png" id="5_sf4d6"]
 [ext_resource type="Texture2D" uid="uid://c8l1plsqtvrql" path="res://assets/characters/bird/bird_5.png" id="6_6m7eo"]
+[ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="7_5icj8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7emm5"]
 load_path = "res://.godot/imported/bird_1.png-fb11ffe7c84230410341b3f4118de27f.ctex"
@@ -72,4 +73,23 @@ polygon = PackedVector2Array(147.867, 6.92456, -112.891, -8.24536, -209.998, -19
 position = Vector2(339.093, -162.913)
 polygon = PackedVector2Array(-50.436, -10.6041, -52.8811, 189.631, -478.046, 325.773, -587.122, 219.814, -520.101, 7.13342, -382.465, -58.1074, -132.832, -72.5386)
 
+[node name="BoxContainer" type="BoxContainer" parent="."]
+offset_left = 52.3028
+offset_top = -602.403
+offset_right = 172.303
+offset_bottom = -496.403
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5icj8")
+theme_override_font_sizes/font_size = 77
+text = "Click the left mouse button to start pulling the hair"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]

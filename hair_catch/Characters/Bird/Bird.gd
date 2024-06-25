@@ -6,7 +6,7 @@ var timer_delay : float = 0.1;
 func _ready() -> void:
 	position = Vector2(137, 429);
 	EventBus.bird_can_move.connect(move);
-	
+	$BoxContainer/Label.visible = false;
 	
 func _input(event: InputEvent) -> void:
 	if(can_move == true):
@@ -31,3 +31,13 @@ func move() -> void:
 func _on_animation_timer_timeout() -> void:
 	$AnimatedSprite2D.stop();
 
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+		$BoxContainer/Label.visible = true;
+		
+		 
+
+
+func _on_hit_box_area_exited(area: Area2D) -> void:
+		$BoxContainer/Label.visible = false;
