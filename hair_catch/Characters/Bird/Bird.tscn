@@ -73,13 +73,13 @@ polygon = PackedVector2Array(147.867, 6.92456, -112.891, -8.24536, -209.998, -19
 position = Vector2(339.093, -162.913)
 polygon = PackedVector2Array(-50.436, -10.6041, -52.8811, 189.631, -478.046, 325.773, -587.122, 219.814, -520.101, 7.13342, -382.465, -58.1074, -132.832, -72.5386)
 
-[node name="BoxContainer" type="BoxContainer" parent="."]
+[node name="InstructionsBoxContainer" type="BoxContainer" parent="."]
 offset_left = 52.3028
 offset_top = -602.403
 offset_right = 172.303
 offset_bottom = -496.403
 
-[node name="Label" type="Label" parent="BoxContainer"]
+[node name="InstructionsLabel" type="Label" parent="InstructionsBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

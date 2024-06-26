@@ -24,6 +24,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	_on_man_movement()
+	
+
+func _on_man_movement() -> void:
 	if(has_appeared == false):
 		if(position.y > (Screen.screen_size.y - UPPER_BOUNDARY)):
 			position.y -= MOVE_AMOUNT;
@@ -40,13 +44,10 @@ func _process(_delta: float) -> void:
 				if($HairHealthProgressBar.value <= 0):
 					can_interact = false;
 					collided = false; 
-					print("It's alive!")
+					
 			
-				
-				
-				
-
-
+			
+			
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	if(has_appeared == true):
 		queue_free();
@@ -74,3 +75,7 @@ func _input(_event):
 		if($HairHealthProgressBar.value == 0):
 			$Sprite2D.texture = IMAGES.pick_random(); 
 		
+
+	
+	
+	

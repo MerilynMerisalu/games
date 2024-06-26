@@ -33,11 +33,11 @@ func _on_animation_timer_timeout() -> void:
 
 
 
-func _on_hit_box_area_entered(area: Area2D) -> void:
-		$BoxContainer/Label.visible = true;
+func _on_hit_box_area_entered(_area: Area2D) -> void:
+		$InstructionsBoxContainer/InstructionsLabel.visible = true;
 		
 		 
 
 
-func _on_hit_box_area_exited(area: Area2D) -> void:
-		$BoxContainer/Label.visible = false;
+func _on_hit_box_area_exited(_area: Area2D) -> void:
+		$InstructionsBoxContainer/InstructionsLabel.visible = false;
