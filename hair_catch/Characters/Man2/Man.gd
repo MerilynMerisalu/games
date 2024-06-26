@@ -24,7 +24,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	_on_man_movement()
+	_on_man_movement();
 	
 
 func _on_man_movement() -> void:
