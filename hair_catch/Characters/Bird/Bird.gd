@@ -6,15 +6,16 @@ var timer_delay : float = 0.1;
 func _ready() -> void:
 	position = Vector2(137, 429);
 	EventBus.bird_can_move.connect(move);
-	$BoxContainer/Label.visible = false;
+	$InstructionsBoxContainer/InstructionsLabel\
+		.visible = false;
 	
 func _input(event: InputEvent) -> void:
 	if(can_move == true):
 		if (event is InputEventMouseMotion):
-			$AnimatedSprite2D.play("fly")
-			position = get_global_mouse_position()
-			$AnimationTimer.stop()
-			$AnimationTimer.start(timer_delay)
+			$AnimatedSprite2D.play("fly");
+			position = get_global_mouse_position();
+			$AnimationTimer.stop();
+			$AnimationTimer.start(timer_delay);
 		$AnimationTimer.start();
 		
 
@@ -34,10 +35,12 @@ func _on_animation_timer_timeout() -> void:
 
 
 func _on_hit_box_area_entered(_area: Area2D) -> void:
-		$InstructionsBoxContainer/InstructionsLabel.visible = true;
+		$InstructionsBoxContainer/InstructionsLabel\
+			.visible = true;
 		
 		 
 
 
 func _on_hit_box_area_exited(_area: Area2D) -> void:
-		$InstructionsBoxContainer/InstructionsLabel.visible = false;
+		$InstructionsBoxContainer/InstructionsLabel\
+			.visible = false;
