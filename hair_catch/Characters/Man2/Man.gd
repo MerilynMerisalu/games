@@ -69,7 +69,8 @@ func _on_area_exited(area: Area2D) -> void:
 		
 		
 func _input(_event):
-	if(Input.is_action_just_pressed("pull") and can_interact == true):
+	if(Input.is_action_just_pressed("pull") 
+		and can_interact == true):
 		$HairHealthProgressBar._on_pull_hair();
 		$HairHealthProgressBar/LongPain.play();
 		if($HairHealthProgressBar.value == 0):
