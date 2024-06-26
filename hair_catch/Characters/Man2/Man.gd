@@ -29,13 +29,18 @@ func _process(_delta: float) -> void:
 			position.y -= MOVE_AMOUNT;
 		else:
 			is_up = true;
-			await get_tree().create_timer(3.0).timeout;
+			await get_tree().create_timer(2.0).timeout;
 			has_appeared = true;
 			if(is_up == true and collided == false):
 				if(position.y < Screen.screen_size.y):
 					position.y += MOVE_AMOUNT;
-			elif(is_up == true and collided == true and can_interact == true):
+			elif(is_up == true and collided == true 
+					and can_interact == true):
 				position = position;
+				if($HairHealthProgressBar.value <= 0):
+					can_interact = false;
+					collided = false; 
+					print("It's alive!")
 			
 				
 				

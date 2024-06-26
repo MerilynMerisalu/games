@@ -3,7 +3,7 @@ extends base_level
 
 
 const MAX_NUM_MEN_ON_THE_SCREEN : int = 2;
-const TIMER_DURATION : float = 8.0;
+const TIMER_DURATION : float = 4.0;
 const MAN_SCENE : PackedScene = preload("res://Characters/Man2/Man.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
