@@ -2,8 +2,6 @@ extends Node
 
 
 signal hair_caught;
-#signal hair_pull;
-
 signal create_man;
 signal bird_can_move;
 signal level_up(level : int);
@@ -14,7 +12,6 @@ signal lose;
 signal change_man_sprite;
 signal recharge_hair_health;
 signal remove_man(man : Node2D)
-
 
 
 const HAIR_LEFT : String = " Hair Left";
@@ -38,13 +35,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-
-
-
-	
-		
-
-
-
-
-
