@@ -13,6 +13,7 @@ signal change_man_sprite;
 signal recharge_hair_health;
 signal remove_man(man : Node2D)
 signal bird_hit;
+signal play_bird_hit_audio;
 
 
 const HAIR_LEFT : String = " Hair Left";

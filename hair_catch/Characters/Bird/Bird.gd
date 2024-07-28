@@ -11,6 +11,10 @@ func _ready() -> void:
 	$InstructionsBoxContainer/InstructionsLabel\
 		.visible = false;
 	
+	
+func _process(delta: float) -> void:
+	pass
+	
 func _input(event: InputEvent) -> void:
 	if(can_move == true):
 		if (event is InputEventMouseMotion):
@@ -40,6 +44,7 @@ func _on_hit_box_area_entered(_area: Area2D) -> void:
 		$InstructionsBoxContainer/InstructionsLabel\
 			.visible = true;
 		
+		
 		 
 
 
@@ -47,6 +52,9 @@ func _on_hit_box_area_exited(_area: Area2D) -> void:
 		$InstructionsBoxContainer/InstructionsLabel\
 			.visible = false;
 
+	
 
-func _on_bird_hit() -> void:
-	$Pain.play()
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if(EventBus.level > 1 and body.name == "Asteroid"):
+		$Pain.play() 

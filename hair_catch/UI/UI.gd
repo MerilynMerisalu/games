@@ -1,6 +1,5 @@
 extends base_ui
 
-signal all_lives_lost;
 const BIRD_LIFE_IMG_1 : Texture = preload("res://assets/images/Lives/one_life_lost_red.png")
 const BIRD_LIFE_IMG_2 : Texture = preload("res://assets/images/Lives/two_lives_lost_red.png")
 const BIRD_LIFE_IMG_3 : Texture = preload("res://assets/images/Lives/three_lives_lost_red.png")
@@ -23,6 +22,7 @@ func _process(_delta: float) -> void:
 func _on_bird_hit() -> void:
 	if i >= 4:
 		game_timer.paused = true;
-	else:	
-		$LifeTextureRect.texture = LIVES_IMAGES[i]
+	else:
+			
+		$LifeTextureRect.texture = LIVES_IMAGES[i];
 		i+= 1

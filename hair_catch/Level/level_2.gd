@@ -29,7 +29,6 @@ func _on_create_man_timer_timeout() -> void:
 
 func _on_create_asteroid_timer_timeout() -> void:
 	var pause_time : float = randf_range(3.0, 10.0)
-	print(pause_time)
 	var asteroid = ASTEROID_SCENE.instantiate();
 	$Asteroids.add_child(asteroid);
 	$CreateAsteroidTimer.wait_time = pause_time;

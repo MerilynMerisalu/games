@@ -93,7 +93,9 @@ vertical_alignment = 1
 
 [node name="Pain" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_j5a8o")
+volume_db = 24.0
 
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
