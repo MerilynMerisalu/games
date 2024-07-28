@@ -23,6 +23,6 @@ func _on_bird_hit() -> void:
 	if i >= 4:
 		game_timer.paused = true;
 	else:
-			
+		print()	
 		$LifeTextureRect.texture = LIVES_IMAGES[i];
 		i+= 1
