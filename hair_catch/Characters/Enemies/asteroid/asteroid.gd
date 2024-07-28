@@ -29,5 +29,5 @@ func _on_body_entered(body: Node) -> void:
 		$FallingAsteroid.stream_paused = true;
 		$AsteroidHit.play();
 		EventBus.bird_hit.emit();
-		$FallingAsteroid.stream_paused = false
+		$FallingAsteroid.stream_paused = false;
 		has_collided = true;
