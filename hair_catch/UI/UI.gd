@@ -22,7 +22,6 @@ func _process(_delta: float) -> void:
 func _on_bird_hit() -> void:
 	if i >= 4:
 		game_timer.paused = true;
-	else:
-		print()	
+	else:	
 		$LifeTextureRect.texture = LIVES_IMAGES[i];
 		i+= 1
