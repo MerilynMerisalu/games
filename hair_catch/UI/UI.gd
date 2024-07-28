@@ -5,7 +5,7 @@ const BIRD_LIFE_IMG_2 : Texture = preload("res://assets/images/Lives/two_lives_l
 const BIRD_LIFE_IMG_3 : Texture = preload("res://assets/images/Lives/three_lives_lost_red.png")
 const BIRD_LIFE_IMG_4 : Texture = preload("res://assets/images/Lives/four_lives_lost_red.png")
 const LIVES_IMAGES : Array = [BIRD_LIFE_IMG_1, BIRD_LIFE_IMG_2, BIRD_LIFE_IMG_3, BIRD_LIFE_IMG_4]
-
+const MAXIMUM_NUMBER_OF_LIVES : int = 4
 var i : int = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_bird_hit() -> void:
-	if i >= 4:
+	if i >= MAXIMUM_NUMBER_OF_LIVES:
 		game_timer.paused = true;
 	else:	
 		$LifeTextureRect.texture = LIVES_IMAGES[i];
