@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-signal hit;
+
 var can_move: bool = false;
 var timer_delay : float = 0.1;
+
+
 func _ready() -> void:
 	position = Vector2(137, 429);
 	EventBus.bird_can_move.connect(move);
@@ -44,3 +46,7 @@ func _on_hit_box_area_entered(_area: Area2D) -> void:
 func _on_hit_box_area_exited(_area: Area2D) -> void:
 		$InstructionsBoxContainer/InstructionsLabel\
 			.visible = false;
+
+
+func _on_bird_hit() -> void:
+	$Pain.play()

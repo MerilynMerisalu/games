@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq16helqlma2s"]
+[gd_scene load_steps=12 format=3 uid="uid://cq16helqlma2s"]
 
 [ext_resource type="Script" path="res://Characters/Bird/Bird.gd" id="1_u0vwu"]
 [ext_resource type="Texture2D" uid="uid://dgdp0dtoqjosw" path="res://assets/characters/bird/bird_1.png" id="2_07yj6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://crpp8nayo8fd3" path="res://assets/characters/bird/bird_4.png" id="5_sf4d6"]
 [ext_resource type="Texture2D" uid="uid://c8l1plsqtvrql" path="res://assets/characters/bird/bird_5.png" id="6_6m7eo"]
 [ext_resource type="FontFile" uid="uid://buaiulg5qxakw" path="res://assets/fonts/singly-linked-font/SinglyLinkedRegular-vmoRL.otf" id="7_5icj8"]
+[ext_resource type="AudioStream" uid="uid://b0ucmxvvwid88" path="res://assets/audio/21147 cartoon rooster pain shout-full.mp3" id="8_j5a8o"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7emm5"]
 load_path = "res://.godot/imported/bird_1.png-fb11ffe7c84230410341b3f4118de27f.ctex"
@@ -89,6 +90,9 @@ theme_override_font_sizes/font_size = 77
 text = "Click the left mouse button to start pulling the hair"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Pain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_j5a8o")
 
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

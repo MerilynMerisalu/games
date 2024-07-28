@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqqja46wc1226"
-path="res://.godot/imported/red_lives – test6.png-79ad6eb706a635900760c0f3a1ccbfa7.ctex"
+uid="uid://b0dwuhq1pfv3a"
+path="res://.godot/imported/meteorBig.png-19192465e71cd23fa09d528949de805c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Lives/red_lives – test6.png"
-dest_files=["res://.godot/imported/red_lives – test6.png-79ad6eb706a635900760c0f3a1ccbfa7.ctex"]
+source_file="res://assets/images/Asteroids/meteorBig.png"
+dest_files=["res://.godot/imported/meteorBig.png-19192465e71cd23fa09d528949de805c.ctex"]
 
 [params]
 

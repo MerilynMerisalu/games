@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dagmoyqxr72cs"]
+
+[ext_resource type="Script" path="res://Characters/Enemies/asteroid/asteroid.gd" id="1_ktit5"]
+[ext_resource type="Texture2D" uid="uid://b0dwuhq1pfv3a" path="res://assets/images/Asteroids/meteorBig.png" id="2_q1u7n"]
+[ext_resource type="AudioStream" uid="uid://baekoqpwmu456" path="res://assets/audio/meteor-[AudioTrimmer.com].mp3" id="3_3m57s"]
+[ext_resource type="AudioStream" uid="uid://chgo01gty6yqn" path="res://assets/audio/zapsplat_sound_design_whoosh_airy_into_slam_hit_impact_002_88787.mp3" id="4_1p2d8"]
+
+[node name="Asteroid" type="RigidBody2D"]
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_ktit5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q1u7n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(39, -128, 10, -123, -9, -115, -22, -114, -39, -113, -56, -108, -67, -104, -94, -100, -109, -97, -120, -80, -125, -71, -139, -59, -145, -36, -154, -16, -151, 4, -151, 20, -146, 27, -144, 44, -134, 55, -119, 60, -96, 71, -110, 63, -84, 68, -66, 51, -48, 75, -58, 57, -15, 93, 10, 115, 31, 126, 43, 134, 60, 129, 79, 115, 97, 106, 120, 98, 141, 90, 159, 80, 160, 58, 153, 43, 154, 22, 148, -2, 143, -25, 136, -41, 117, -60, 96, -72, 79, -93, 57, -108, 50, -121, 46, -135, 47, -124)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="FallingAsteroid" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3m57s")
+autoplay = true
+
+[node name="AsteroidHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1p2d8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

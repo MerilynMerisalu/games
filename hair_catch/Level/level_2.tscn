@@ -12,4 +12,10 @@ mouse_filter = 2
 
 [node name="UI" parent="." index="8" instance=ExtResource("3_cu074")]
 
+[node name="Asteroids" type="Node" parent="." index="9"]
+
+[node name="CreateAsteroidTimer" type="Timer" parent="." index="10"]
+autostart = true
+
 [connection signal="timeout" from="CreateManTimer" to="." method="_on_create_man_timer_timeout"]
+[connection signal="timeout" from="CreateAsteroidTimer" to="." method="_on_create_asteroid_timer_timeout"]

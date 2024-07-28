@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqqja46wc1226"
-path="res://.godot/imported/red_lives – test6.png-79ad6eb706a635900760c0f3a1ccbfa7.ctex"
+uid="uid://4g2a2yk26x58"
+path="res://.godot/imported/two_lives_lost_red.png-893eeb5793a20a314aaa862a07e4c542.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Lives/red_lives – test6.png"
-dest_files=["res://.godot/imported/red_lives – test6.png-79ad6eb706a635900760c0f3a1ccbfa7.ctex"]
+source_file="res://assets/images/Lives/two_lives_lost_red.png"
+dest_files=["res://.godot/imported/two_lives_lost_red.png-893eeb5793a20a314aaa862a07e4c542.ctex"]
 
 [params]
 
