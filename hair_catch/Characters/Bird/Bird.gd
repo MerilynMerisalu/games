@@ -57,4 +57,5 @@ func _on_hit_box_area_exited(_area: Area2D) -> void:
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if(EventBus.level > 1 and body.name == "Asteroid"):
+		$Pain.volume_db = 24
 		$Pain.play() 

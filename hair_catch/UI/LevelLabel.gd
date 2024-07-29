@@ -26,7 +26,8 @@ func _on_level_timer_timeout() -> void:
 
 func _on_start_timer_container_label_hidden() -> void:
 	EventBus.start_label_finished.emit();
-	EventBus.is_start_label_finished = true
+	EventBus.is_start_label_finished = true;
+	EventBus.create_asteroid.emit();
 	
 	
 func _on_display_level_changed() -> void:

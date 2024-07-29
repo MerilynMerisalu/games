@@ -13,6 +13,7 @@ signal change_man_sprite;
 signal recharge_hair_health;
 signal remove_man(man: Node2D)
 signal bird_hit;
+signal create_asteroid;
 
 
 
