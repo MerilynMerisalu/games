@@ -9,6 +9,7 @@ const ASTEROID_SCENE : PackedScene = \
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.start_label_finished.connect(_on_create_man_timer_timeout)
+	#EventBus.start_label_finished.connect(_on_create_asteroid_timer_timeout)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +19,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_create_man_timer_timeout() -> void:
+	
 	var man = MAN_SCENE.instantiate();
 	if($Men.get_child_count() >= MAX_NUM_MEN_ON_THE_SCREEN):
 		await get_tree().create_timer(TIMER_DURATION).timeout;
@@ -28,10 +30,13 @@ func _on_create_man_timer_timeout() -> void:
 
 
 func _on_create_asteroid_timer_timeout() -> void:
-	var pause_time : float = randf_range(3.0, 10.0)
-	var asteroid = ASTEROID_SCENE.instantiate();
-	$Asteroids.add_child(asteroid);
-	$CreateAsteroidTimer.wait_time = pause_time;
+	if($GameTimer.is_stopped() == true):
+		var pause_time : float = randf_range(5.0, 30);
+		var asteroid = ASTEROID_SCENE.instantiate();
+		$Asteroids.add_child(asteroid);
+		$CreateAsteroidTimer.wait_time = pause_time;
+
+		
 
 
 
