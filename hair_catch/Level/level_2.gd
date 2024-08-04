@@ -15,22 +15,26 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	super.game_over();
+	super._on_stop_create_man();
 	
 
 
 func _on_create_man_timer_timeout() -> void:
-	var man = MAN_SCENE.instantiate();
-	if($Men.get_child_count() >= MAX_NUM_MEN_ON_THE_SCREEN):
-		await get_tree().create_timer(TIMER_DURATION).timeout;
+	if(EventBus.is_creating_men == true and \
+		EventBus.level == 2):
+		var man = MAN_SCENE.instantiate();
+	#if($Men.get_child_count() >= MAX_NUM_MEN_ON_THE_SCREEN):
+		#await get_tree().create_timer(TIMER_DURATION).timeout;
 		$Men.add_child(man);
-	else:
-		$Men.add_child(man);
+	#else:
+		#$Men.add_child(man);
 
 
 
 func _on_create_asteroid_timer_timeout() -> void:
-	var pause_time : float = randf_range(5.0, 30);
-	$CreateAsteroidTimer.wait_time = pause_time
-	var asteroid = ASTEROID_SCENE.instantiate();
-	$Asteroids.add_child(asteroid);
+	if EventBus.level == 2:
+		var pause_time : float = randf_range(5.0, 30);
+		$CreateAsteroidTimer.wait_time = pause_time;
+		var asteroid = ASTEROID_SCENE.instantiate();
+		$Asteroids.add_child(asteroid);
 		
